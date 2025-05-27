@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.customWidth {
+  width: 100%; /* Default width for small devices (mobile-first approach) */
+  max-width: 1242px; /* Limit the width on large screens */
+  margin: 0 auto; /* Centers the content horizontally */
+}
+
+.navText {
+  font-size: 1rem;
+  line-height: normal;
+  padding: 0 2px;
+}
+
+/* Tablet devices (min-width: 640px) */
+@media screen and (min-width: 640px) {
+  .customWidth {
+    padding: 0 15px; /* Optional: Add some padding for smaller devices */
+  }
+}
+
+/* Laptop devices (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+  .customWidth {
+    max-width: 1242px; /* Set width to 1100px on laptops */
+  }
+  .navText {
+    font-size: 0.8rem;
+    line-height: normal;
+  }
+}
+
+/* Desktop devices (min-width: 1280px) */
+@media screen and (min-width: 1280px) {
+  .customWidth {
+    max-width: 1134px; /* Limit width to 1200px for large screens */
+  }
+  .navText {
+    font-size: 1rem;
+    line-height: normal;
+  }
+}
+
+/* Desktop devices (min-width: 1440px) */
+@media screen and (min-width: 1440px) {
+  .customWidth {
+    max-width: 1240px; /* Limit width to 1200px for large screens */
+  }
+
+  .navText {
+     font-size: 1rem;
+  }
+}
+
+/* Extra large screens (min-width: 1920px) */
+@media screen and (min-width: 1920px) {
+  .customWidth {
+    max-width: 1440px; /* Expand width for larger screens */
+  }
+  .navText {
+     font-size: 1rem;
+    line-height: normal;
+  }
+}
+
+/* Extra large screens (min-width: 2560px) */
+@media screen and (min-width: 2560px) {
+  .customWidth {
+    max-width: 1400px; /* Expand width for very large screens */
+  }
+
+}
+
+/* Ultra-wide screens (min-width: 3200px) */
+@media screen and (min-width: 3200px) {
+  .customWidth {
+    max-width: 1500px; /* Expand width for ultra-wide screens */
+  }
+
+}
+
+/* Super ultra-wide screens (min-width: 3840px) */
+@media screen and (min-width: 3840px) {
+  .customWidth {
+    max-width: 1600px; /* Expand width for super ultra-wide screens */
+  }
+
+}
+
+/* Font Sizes Responsiuve Block */
+.sectionHeading {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: normal;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 32.6px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 32.6px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 26px;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 26px;
+  }
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 2.2rem;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+    line-height: 2.2rem;
+  }
+
+  @media screen and (max-width: 1280px) {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.3rem;
+  }
+
+  @media screen and (max-width: 992px) {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.3rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    text-align: justify;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    text-align: start;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+
+    text-align: start;
+  }
+}
+
+.text-blue{
+  color: #2563EB;
+}
+
+
+// --------------------------Color Variables--------------------------
+@theme {
+  --color-blue-primary: #2563EB;
+}
