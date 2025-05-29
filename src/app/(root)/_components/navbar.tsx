@@ -24,7 +24,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="customwidth shadow z-50">
+    <nav className="customWidth ">
       <div className=" px-4 py-4 flex justify-between items-center">
         <h1 className="text-xl font-bold text-white">Muhammad Fuqan</h1>
 

@@ -25,10 +25,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.bg-dotted-pattern {
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
 .customWidth {
   width: 100%; /* Default width for small devices (mobile-first approach) */
   max-width: 1242px; /* Limit the width on large screens */
-  margin: 0 auto; /* Centers the content horizontally */
+  margin: 20px auto; /* Centers the content horizontally */
 }
 
 .navText {
@@ -194,6 +199,10 @@ body {
 
 
 // --------------------------Color Variables--------------------------
-@theme {
+
+:root {
   --color-blue-primary: #2563EB;
+  --sectionMargin: 20px 0px;
+ 
 }
+
