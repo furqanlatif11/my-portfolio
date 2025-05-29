@@ -46,9 +46,9 @@ export default function ServicesSection() {
         {services.map((service) => (
           <div
             key={service.id}
-            className="rounded-xl p-6 bg-white shadow hover:shadow-md border border-gray-200"
+            className="rounded-xl p-6 bg-white dark:bg-white/10 backdrop-blur-md border border-white/20 shadow-md rounded-xl p-6 text-left shadow hover:shadow-md border border-gray-200"
           >
-            <h3 className="text-lg font-semibold text-[#222222] mb-2">
+            <h3 className="text-lg font-semibold text-blue-600 mb-2">
               {service.name}
             </h3>
             <p className="text-sm text-gray-600 mb-4">{service.description}</p>
