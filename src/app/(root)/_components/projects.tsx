@@ -7,6 +7,9 @@ import { Dialog } from "@headlessui/react";
 import Link from "next/link";
 import { Check, Github, Globe } from "lucide-react";
 
+// Add missing Project type definition
+type Project = (typeof projects)[number];
+
 const tabs = ["All Projects", "Frontend", "Full-Stack", "Freelance"] as const;
 
 export default function Projects() {
@@ -17,7 +20,7 @@ export default function Projects() {
   const filteredProjects =
     selectedTab === "All Projects"
       ? projects
-      : projects.filter((p) => p.category.includes(selectedTab as string));
+      : projects.filter((p) => p.category.includes(selectedTab));
 
   return (
     <section className="py-12 px-4 customWidth">
@@ -138,7 +141,7 @@ export default function Projects() {
                   Technologies Used
                 </h4>
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {selectedProject.details.technologies.map((tech) => (
+                  {selectedProject.details.technologies.map((tech: string) => (
                     <span
                       key={tech}
                       className="text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded-full"
@@ -152,8 +155,11 @@ export default function Projects() {
                   Key Features
                 </h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 list-disc pl-5 mb-3 text-sm text-gray-700">
-                  {selectedProject.details.features.map((f) => (
-                    <li key={f} className="flex gap-2"><Check width={20} className="text-green-600"/>{f}</li>
+                  {selectedProject.details.features.map((f: string) => (
+                    <li key={f} className="flex gap-2">
+                      <Check width={20} className="text-green-600" />
+                      {f}
+                    </li>
                   ))}
                 </ul>
 
@@ -180,16 +186,6 @@ export default function Projects() {
                   >
                     View Live Demo
                   </a>
-                  {/* {selectedProject.details.codeUrl && (
-                    <a
-                      href={selectedProject.details.codeUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="bg-gray-600 text-white px-4 py-2 rounded"
-                    >
-                      View Code
-                    </a>
-                  )} */}
                 </div>
               </Dialog.Panel>
             </div>
