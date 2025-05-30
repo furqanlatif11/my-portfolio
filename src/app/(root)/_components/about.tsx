@@ -1,20 +1,21 @@
 "use client";
-import React from "react";
-import { useEffect, useState } from "react";
 import { BadgeCheck } from "lucide-react";
-interface ExperienceItem {
-  title: string;
-  company: string;
-  duration: string;
-  description: string;
-  colorClass: string;
-}
+import React from "react";
+// import { useEffect, useState } from "react";
+// import { BadgeCheck } from "lucide-react";
+// interface ExperienceItem {
+//   title: string;
+//   company: string;
+//   duration: string;
+//   description: string;
+//   colorClass: string;
+// }
 
-interface AchievementItem {
-  count: string;
-  label: string;
-  colorClass: string;
-}
+// interface AchievementItem {
+//   count: string;
+//   label: string;
+//   colorClass: string;
+// }
 
 // const experiences: ExperienceItem[] = [
 //   {
