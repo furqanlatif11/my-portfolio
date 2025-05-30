@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { FaLaptopCode, FaServer, FaCode, FaRocket } from "react-icons/fa";
 
 interface ExperienceItem {
@@ -8,7 +8,7 @@ interface ExperienceItem {
   duration: string;
   description: string;
   tech: string[];
-  icon: JSX.Element;
+  icon: ReactNode;
 }
 
 const experiences: ExperienceItem[] = [
