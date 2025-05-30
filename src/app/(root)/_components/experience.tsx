@@ -1,7 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
 import { FaLaptopCode, FaServer, FaCode, FaRocket } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
 
 interface ExperienceItem {
   role: string;

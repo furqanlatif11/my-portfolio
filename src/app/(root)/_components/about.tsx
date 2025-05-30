@@ -16,89 +16,85 @@ interface AchievementItem {
   colorClass: string;
 }
 
-interface AboutProps {
-  // You can extend this interface to pass dynamic data if needed
-}
+// const experiences: ExperienceItem[] = [
+//   {
+//     title: "Senior Frontend Developer",
+//     company: "TechCorp Solutions",
+//     duration: "2021–Present",
+//     description: "Leading frontend development for enterprise apps",
+//     colorClass: "text-blue-600",
+//   },
+//   {
+//     title: "Full-Stack Developer",
+//     company: "InnovateLab",
+//     duration: "2019–2021",
+//     description: "Built web apps from concept to deployment",
+//     colorClass: "text-green-600",
+//   },
+//   {
+//     title: "Freelance Developer",
+//     company: "Various Clients",
+//     duration: "2018–2019",
+//     description: "Custom solutions for startups & small businesses",
+//     colorClass: "text-purple-600",
+//   },
+// ];
 
-const experiences: ExperienceItem[] = [
-  {
-    title: "Senior Frontend Developer",
-    company: "TechCorp Solutions",
-    duration: "2021–Present",
-    description: "Leading frontend development for enterprise apps",
-    colorClass: "text-blue-600",
-  },
-  {
-    title: "Full-Stack Developer",
-    company: "InnovateLab",
-    duration: "2019–2021",
-    description: "Built web apps from concept to deployment",
-    colorClass: "text-green-600",
-  },
-  {
-    title: "Freelance Developer",
-    company: "Various Clients",
-    duration: "2018–2019",
-    description: "Custom solutions for startups & small businesses",
-    colorClass: "text-purple-600",
-  },
-];
+// const achievements: AchievementItem[] = [
+//   { count: "10+", label: "Projects Delivered", colorClass: "text-blue-600" },
+//   { count: "98%", label: "Client Satisfaction", colorClass: "text-green-600" },
+//   { count: "12+", label: "Technologies", colorClass: "text-purple-600" },
+//   { count: "2+", label: "Years Experience", colorClass: "text-orange-600" },
+// ];
+// interface AnimatedCounterProps {
+//   target: string; // e.g. "50+", "98%", "15+", "5+"
+//   duration?: number; // animation duration in ms
+//   className?: string;
+// }
+// const parseCount = (countStr: string): number => {
+//   const match = countStr.match(/\d+/);
+//   return match ? parseInt(match[0], 10) : 0;
+// };
 
-const achievements: AchievementItem[] = [
-  { count: "10+", label: "Projects Delivered", colorClass: "text-blue-600" },
-  { count: "98%", label: "Client Satisfaction", colorClass: "text-green-600" },
-  { count: "12+", label: "Technologies", colorClass: "text-purple-600" },
-  { count: "2+", label: "Years Experience", colorClass: "text-orange-600" },
-];
-interface AnimatedCounterProps {
-  target: string; // e.g. "50+", "98%", "15+", "5+"
-  duration?: number; // animation duration in ms
-  className?: string;
-}
-const parseCount = (countStr: string): number => {
-  const match = countStr.match(/\d+/);
-  return match ? parseInt(match[0], 10) : 0;
-};
+// const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+//   target,
+//   duration = 1500,
+//   className,
+// }) => {
+//   const [count, setCount] = useState(0);
+//   const targetNumber = parseCount(target);
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
-  target,
-  duration = 1500,
-  className,
-}) => {
-  const [count, setCount] = useState(0);
-  const targetNumber = parseCount(target);
+//   useEffect(() => {
+//     let start = 0;
+//     if (targetNumber === 0) {
+//       setCount(0);
+//       return;
+//     }
+//     const increment = targetNumber / (duration / 30); // update every 30ms approx
+//     const interval = setInterval(() => {
+//       start += increment;
+//       if (start >= targetNumber) {
+//         setCount(targetNumber);
+//         clearInterval(interval);
+//       } else {
+//         setCount(Math.floor(start));
+//       }
+//     }, 30);
+//     return () => clearInterval(interval);
+//   }, [targetNumber, duration]);
 
-  useEffect(() => {
-    let start = 0;
-    if (targetNumber === 0) {
-      setCount(0);
-      return;
-    }
-    const increment = targetNumber / (duration / 30); // update every 30ms approx
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= targetNumber) {
-        setCount(targetNumber);
-        clearInterval(interval);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 30);
-    return () => clearInterval(interval);
-  }, [targetNumber, duration]);
+//   // Keep the suffix (+ or % or none)
+//   const suffix = target.replace(/\d+/g, "");
 
-  // Keep the suffix (+ or % or none)
-  const suffix = target.replace(/\d+/g, "");
+//   return (
+//     <span className={className}>
+//       {count}
+//       {suffix}
+//     </span>
+//   );
+// };
 
-  return (
-    <span className={className}>
-      {count}
-      {suffix}
-    </span>
-  );
-};
-
-const About: React.FC<AboutProps> = () => {
+const About: React.FC = () => {
   return (
     <section className="py-16 px-6 customWidth mx-auto relative">
       {/* Heading */}
@@ -228,10 +224,10 @@ const About: React.FC<AboutProps> = () => {
             <h4 className="font-semibold text-lg mb-4 text-gray-100">
               Certifications
             </h4>
-            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-200 relative z-10">
-              <li>AWS Certified Developer</li>
-              <li>Google Cloud Professional</li>
-              <li>React Developer Certification</li>
+            <ul className=" space-y-1 text-sm text-gray-200 relative z-10">
+              <li className="flex gap-4"><BadgeCheck className="text-blue-600"/>AWS Certified Developer</li>
+              <li className="flex gap-4"><BadgeCheck className="text-blue-600"/>Google Cloud Professional</li>
+              <li className="flex gap-4"><BadgeCheck className="text-blue-600"/>React Developer Certification</li>
             </ul>
 
             {/* Blob Background */}

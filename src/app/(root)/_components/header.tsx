@@ -37,7 +37,7 @@ export default function HeroHeader() {
         <div className=" space-y-4 text-center md:text-left relative">
           <div className="absolute w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-30 top-20 left-20 -z-10"></div>
           <h1 className="text-4xl md:text-5xl font-bold">
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="text-[var(--color-blue-primary)]">
               Muhammad Furqan Latif
             </span>

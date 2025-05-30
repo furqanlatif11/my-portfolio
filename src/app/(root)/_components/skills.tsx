@@ -51,7 +51,7 @@ const SkillBar = ({
 export default function Skills() {
   return (
     <section className="   mt-20 text-center relative ">
-          <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 top-0 right-1/2 -z-10"></div>
+          <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 top-0 left-40 -z-10"></div>
         
       <div className=" customWidth px-4 py-16 md:py-24 ">
         <h2 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">
