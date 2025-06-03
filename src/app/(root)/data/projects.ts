@@ -41,5 +41,29 @@ export const projects: Project[] = [
       codeUrl: '#',
     },
   },
+  {
+    id: 2,
+    title: 'Learning Management Platform',
+     category: ['Frontend', 'Freelance'],
+    description: 'Full-stack e-commerce solution with React frontend and Node.js backend',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    imageUrl: '/assets/images/frontend.jfif',
+    details: {
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe API', 'JWT', 'Tailwind CSS'],
+      features: [
+        'User Authentication',
+        'Payment Processing',
+        'Admin Dashboard',
+        'Shopping Cart',
+        'Order Management',
+        'Responsive Design',
+      ],
+      challenges: 'Implementing secure payment processing and optimizing DB queries.',
+      outcome: 'Successfully deployed platform serving 1000+ daily users with 99.9% uptime.',
+      liveDemoUrl: '#',
+      githubUrl: '#',
+      codeUrl: '#',
+    },
+  },
   // Add more projects...
 ];
