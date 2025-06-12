@@ -57,7 +57,7 @@ export default function Experience() {
       className=" mt-20 p-10 bg-[#0f0f11] text-white text-center"
     >   
       <div className="customWidth ">
-        <h2 className="text-4xl font-bold mb-2">Experience</h2>
+        <h2 className="sectionHeading font-bold mb-2">Experience</h2>
         <p className="text-gray-400 mb-12">
           Professional journey across software houses and freelance projects
         </p>

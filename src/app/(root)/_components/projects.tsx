@@ -47,7 +47,7 @@ export default function Projects() {
   const CurrentIcon = items[currentIconIndex].Icon;
   return (
     <section className="py-12 px-4 customWidth">
-      <h2 className="text-3xl font-bold text-center mb-6">Projects</h2>
+      <h2 className="sectionHeading font-bold text-center mb-6">Projects</h2>
       <p className="text-center text-gray-500 mb-8">
         Featured work showcasing full-stack development expertise
       </p>

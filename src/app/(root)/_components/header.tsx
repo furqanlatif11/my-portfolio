@@ -1,111 +1,93 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { Typewriter } from 'react-simple-typewriter';
 
 const roles = [
-  {
-    title: "Full-Stack Developer",
-    image: "/assets/images/fullstack.jfif",
-  },
-  {
-    title: "Shopify Developer",
-    image: "/assets/images/frontend.jfif",
-  },
-  {
-    title: "Backend Developer",
-    image: "/assets/images/backend.jfif",
-  },
+  'Full-Stack Developer',
+  'Shopify Expert',
+  'Backend Engineer',
+  'Freelancer',
 ];
 
-export default function HeroHeader() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const { title, image } = roles[index];
-
+export default function HeroSection() {
   return (
-    <section className="">
-      <div className="w-full customWidth   min-h-[60vh] grid grid-cols-1   md:grid-cols-2 items-center gap-8 px-4 md:px-8">
-        <div className=" space-y-4 text-center md:text-left relative">
-          <div className="absolute w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-30 top-20 left-20 -z-10"></div>
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Hi, I&apos;m{" "}
-            <span className="text-[var(--color-blue-primary)]">
+    <section className="relative text-white w-full min-h-screen flex items-center justify-center">
+      {/* Subtle glowing background blob */}
+      <div className="absolute w-96 h-96 bg-blue-600 opacity-10 blur-3xl rounded-full top-20 left-10 -z-10" />
+      <div className="absolute w-80 h-80 bg-purple-700 opacity-10 blur-2xl rounded-full bottom-20 right-20 -z-10" />
+
+      <div className="max-w-7xl w-full px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+        {/* Text Section */}
+        <div className="space-y-6">
+          <h1 className="text-2xl sm:text-5xl lg:text-2xl font-bold leading-tight">
+            Hello, I&apos;m{' '}
+            <p className="text-transparent bg-clip-text text-2xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-blue-500 to-purple-500">
               Muhammad Furqan Latif
-            </span>
+            </p>
           </h1>
 
-          <AnimatePresence mode="wait">
-            <motion.h2
-              key={title}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.5 }}
-              className="text-xl md:text-2xl text-[#f9f9f9]"
-            >
-              {title}
-            </motion.h2>
-          </AnimatePresence>
+          <h2 className="text-xl sm:text-2xl text-gray-300">
+            I am a{' '}
+            <span className="text-white font-semibold">
+              <Typewriter
+                words={roles}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
+          </h2>
 
-          <p className="text-[#f9f9f9]">
-            Experienced in frontend and backend development with a passion for
-            creating innovative solutions. Professional experience in software
-            houses and successful freelance projects.
+          <p className="text-gray-400 max-w-xl leading-relaxed">
+            Crafting robust web applications with clean code and great user experience.
+            I bring full-stack expertise and a creative edge to every project I take on.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="bg-[var(--color-blue-primary)] text-white py-2 px-4 rounded-md hover:bg-blue-700">
-              View My Work
+          <div className="flex gap-4 pt-4">
+            <button className="px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition">
+              View Portfolio
             </button>
-            <button className="border border-[var(--color-blue-primary)] text-[var(--color-blue-primary)] py-2 px-4 rounded-md hover:text-white hover:bg-[var(--color-blue-primary)]">
-              Get In Touch
+            <button className="px-6 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition">
+              Contact Me
             </button>
           </div>
 
-          <div className="flex justify-center md:justify-start gap-8 pt-6 text-sm text-gray-600">
+          <div className="flex gap-8 pt-6 text-sm text-gray-400">
             <div className="text-center">
-              <p className="text-[var(--color-blue-primary)] sectionHeading font-bold">
-                2+
-              </p>
+              <p className="text-white text-2xl font-bold">2+</p>
               <p>Years Experience</p>
             </div>
             <div className="text-center">
-              <p className="text-[var(--color-blue-primary)] sectionHeading font-bold">
-                10+
-              </p>
+              <p className="text-white text-2xl font-bold">10+</p>
               <p>Projects Completed</p>
             </div>
             <div className="text-center">
-              <p className="text-[var(--color-blue-primary)] sectionHeading font-bold">
-                5+
-              </p>
+              <p className="text-white text-2xl font-bold">5+</p>
               <p>Happy Clients</p>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-center items-center ">
-          <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 top-0 right-14 -z-10"></div>
-          <motion.div
-            key={image}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.6 }}
-            className="relative w-60 h-60 mt-10 md:mt-0 md:w-80 md:h-80 rounded-full overflow-hidden shadow-lg flex "
-          >
-            <Image src={image} alt={title} fill className="object-cover" />
-          </motion.div>
-        </div>
+        {/* Image Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
+        >
+          <Image
+            src="/assets/images/fullstack.jfif"
+            alt="Muhammad Furqan Latif"
+            fill
+            className="object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500"
+          />
+        </motion.div>
       </div>
     </section>
   );

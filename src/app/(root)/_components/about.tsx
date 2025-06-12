@@ -5,7 +5,7 @@ import React from "react";
 const About: React.FC = () => {
   return (
     <section className="py-16 px-6 customWidth mx-auto relative">
-      <h2 className="text-4xl font-bold text-center mb-4">About</h2>
+      <h2 className="sectionHeading font-bold text-center mb-4">About</h2>
       <p className="text-center text-lg text-white max-w-3xl mx-auto mb-12">
         Passionate software engineer with expertise in full-stack development
       </p>

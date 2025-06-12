@@ -137,7 +137,7 @@ export default function ServicesSection() {
 
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-4">Services</h2>
+      <h2 className="sectionHeading font-bold text-center mb-4">Services</h2>
       <p className="text-center text-gray-600 mb-10">
         Comprehensive development solutions from concept to deployment
       </p>
