@@ -7,7 +7,7 @@ import Skills from "./_components/skills";
 import ReadyToWork from "./_components/ready-to-work";
 import Contact from "./_components/contact";
 import Footer from "./_components/footer";
-import InteractiveMap from "./_components/project-map";
+// import InteractiveMap from "./_components/project-map";
 import IdeaToReality from "./_components/ideatoreality";
 
 
@@ -20,7 +20,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects/>
-      <InteractiveMap/>
+      {/* <InteractiveMap/> */}
       <Services/>
       <ReadyToWork title="Ready to Work Together?" description="Let’s create something amazing!"/>
       <Contact/>

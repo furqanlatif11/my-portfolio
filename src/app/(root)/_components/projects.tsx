@@ -5,7 +5,8 @@ import { projects } from "../data/projects";
 import Image from "next/image";
 import { Dialog } from "@headlessui/react";
 import Link from "next/link";
-import { Check, Github, Globe, Plus } from "lucide-react";
+import { Check, CodeXml, Github, Globe, Plus } from "lucide-react";
+import { FaShopify, FaWordpress  } from "react-icons/fa";
 import Button from "./button";
 
 // Add missing Project type definition
@@ -15,9 +16,10 @@ const tabs = ["All Projects", "Frontend", "Full-Stack", "Freelance"] as const;
 
 const items = [
   { Icon: Plus, label: "Add Project", color: "white", bg: "bg-blue-600" },
-  { Icon: Github, label: "GitHub", color: "black", bg: "bg-gray-300" },
-  { Icon: Globe, label: "Live Demo", color: "white", bg: "bg-green-600" },
-  { Icon: Check, label: "Verified", color: "white", bg: "bg-red-600" },
+  { Icon: CodeXml , label: "Frontend Project", color: "purple", bg: "bg-gray-300" },
+  { Icon: Globe, label: "Full-Stack Application", color: "white", bg: "bg-green-600" },
+  { Icon: FaShopify, label: "Shopify", color: "green", bg: "bg-white" },
+  { Icon: FaWordpress, label: "Wordpress", color: "white", bg: "bg-gray-600" },
 ];
 
 export default function Projects() {
@@ -94,9 +96,7 @@ export default function Projects() {
 
               {/* Project details */}
               <div className="p-4">
-                <h3 className="text-lg text-white ">
-                  {project.title}
-                </h3>
+                <h3 className="text-lg text-white ">{project.title}</h3>
                 <p className="text-base text-gray-400 mt-3">
                   {project.description}
                 </p>
