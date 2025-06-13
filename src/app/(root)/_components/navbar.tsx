@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavLink {
   name: string;
@@ -22,7 +23,9 @@ export default function Navbar() {
       const fullHeight = document.body.scrollHeight;
 
       setIsScrolled(scrollY > 50);
-      setShowBottomNav(scrollY > 200 && scrollY + windowHeight < fullHeight - 200);
+      setShowBottomNav(
+        scrollY > 200 && scrollY + windowHeight < fullHeight - 200
+      );
       setAtBottom(scrollY + windowHeight >= fullHeight - 100);
     };
 
@@ -46,18 +49,10 @@ export default function Navbar() {
   return (
     <>
       {/* Top Navbar */}
-      <nav
-      >
+      <nav>
         <div className="customWidth">
           <div className="flex justify-between items-center">
-            <h1
-              className={`text-xl font-bold ${
-                isScrolled ? "text-black" : "text-white"
-              }`}
-            >
-              Muhammad Furqan
-            </h1>
-
+            <Image src="/assets/images/mfLogo.png" alt="Logo" width={60} height={60}/>
             <div className="hidden md:flex space-x-8">
               {navLinks.map((link) => (
                 <Link

@@ -1,10 +1,12 @@
 "use client";
 import { BadgeCheck } from "lucide-react";
+import Image from "next/image";
 import React from "react";
+import Button from "./button";
 
 const About: React.FC = () => {
   return (
-    <section className="py-16 px-6 customWidth mx-auto relative">
+    <section className="py-20 px-6 customWidth mx-auto relative">
       <h2 className="sectionHeading font-bold text-center mb-4">About</h2>
       <p className="text-center text-lg text-white max-w-3xl mx-auto mb-12">
         Passionate software engineer with expertise in full-stack development
@@ -17,8 +19,8 @@ const About: React.FC = () => {
             Building Digital Solutions That Matter
           </h3>
           <p className="text-white mb-4">
-            With over 5 years of experience in software development, I
-            specialize in creating robust, scalable applications using modern
+            With over 3 years of experience in software and website development,
+            I specialize in creating robust, scalable applications using modern
             technologies. My journey spans from freelance projects to
             enterprise-level solutions.
           </p>
@@ -40,19 +42,21 @@ const About: React.FC = () => {
               <h4 className="font-semibold mb-2">Backend</h4>
               <ul className="space-y-1 text-white">
                 <li>✅ Node.js & Express</li>
-                <li>✅ Python & Django</li>
+                <li>✅ Python</li>
                 <li>✅ PostgreSQL & MongoDB</li>
               </ul>
             </div>
           </div>
 
           <div className="flex gap-4">
-            <button className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
-              Download CV
-            </button>
-            <button className="border border-white text-white px-5 py-2 rounded hover:bg-blue-600 transition">
-              Let’s Connect
-            </button>
+            <Button label="Download CV" variant="solid" />
+            <Button
+              label="Let's Connect"
+              href="/contact"
+              variant="outlined"
+              target="_blank"
+              showHoverIcon={true}
+            />
           </div>
         </div>
 
@@ -65,25 +69,74 @@ const About: React.FC = () => {
             </h4>
             <div className="space-y-4 text-sm text-gray-200 relative z-10">
               <div>
-                <p className="text-blue-300 font-medium">
-                  Senior Frontend Developer
-                </p>
-                <p>TechCorp Solutions • 2021–Present</p>
+                <p className="text-blue-300 font-medium">Software Engineer</p>
+                <Image
+                  src="/assets/images/adyzerLogo.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                />
+                <p>ADYZER • Jan 2025 – Present</p>
                 <p>Leading frontend development for enterprise apps</p>
+                <p>Job Type: Remote</p>
               </div>
               <div>
-                <p className="text-green-300 font-medium">
-                  Full-Stack Developer
+                <p className="text-blue-300 font-medium">
+                  Associate Software Engineer
                 </p>
-                <p>InnovateLab • 2019–2021</p>
+                <Image
+                  src="/assets/images/adyzerLogo.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                />
+                <p>ADYZER • Oct 2024 – Jan 2025</p>
                 <p>Built web apps from concept to deployment</p>
+                <p>Job Type: Remote</p>
               </div>
               <div>
                 <p className="text-purple-300 font-medium">
-                  Freelance Developer
+                  Software Engineer - I
                 </p>
-                <p>Various Clients • 2018–2019</p>
+                <p className="">
+                  <Image
+                    src="/assets/images/mslmLogo.png"
+                    alt=""
+                    width={20}
+                    height={20}
+                  />
+                  MSLM DEV • Jun 2024 – Aug 2024
+                </p>
                 <p>Custom solutions for startups & small businesses</p>
+                <p>Job Type: On-site</p>
+              </div>
+              <div>
+                <p className="text-purple-300 font-medium">
+                  Software Engineer - Intern
+                </p>
+                <Image
+                  src="/assets/images/mslmLogo.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                />
+                <p>MSLM DEV • Mar 2024 – May 2024</p>
+                <p>Custom solutions for startups & small businesses</p>
+                <p>Job Type: On-site</p>
+              </div>
+              <div>
+                <p className="text-green-300 font-medium">
+                  Frontend Developer - Intern
+                </p>
+                <Image
+                  src="/assets/images/pfLogo.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                />
+                <p>Programmers Force • Jan 2024 – Feb 2024</p>
+                <p>Custom solutions for startups & small businesses</p>
+                <p>Job Type: On-site</p>
               </div>
             </div>
             <div className="absolute right-[-50px] top-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500 opacity-30 rounded-full blur-3xl transition-transform duration-700 ease-in-out group-hover:translate-x-[-120px]" />
@@ -98,7 +151,7 @@ const About: React.FC = () => {
               <div>
                 <span className="text-2xl text-blue-400">10+</span>
                 <br />
-                Projects Delivered
+                Freelance Projects Delivered
               </div>
               <div>
                 <span className="text-2xl text-green-400">98%</span>
@@ -111,7 +164,7 @@ const About: React.FC = () => {
                 Technologies
               </div>
               <div>
-                <span className="text-2xl text-orange-400">2+</span>
+                <span className="text-2xl text-orange-400">3+</span>
                 <br />
                 Years Experience
               </div>
@@ -127,15 +180,19 @@ const About: React.FC = () => {
             <ul className="space-y-1 text-sm text-gray-200 relative z-10">
               <li className="flex gap-4">
                 <BadgeCheck className="text-blue-600" />
-                AWS Certified Developer
+                Programming with JavaScript
               </li>
-              <li className="flex gap-4">
+              {/* <li className="flex gap-4">
                 <BadgeCheck className="text-blue-600" />
                 Google Cloud Professional
-              </li>
+              </li> */}
               <li className="flex gap-4">
                 <BadgeCheck className="text-blue-600" />
                 React Developer Certification
+              </li>
+              <li className="flex gap-4">
+                <BadgeCheck className="text-blue-600" />
+                English Language Proficiency - IELTS 7 Bands
               </li>
             </ul>
             <div className="absolute right-[-50px] top-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-green-400 via-teal-400 to-cyan-400 opacity-30 rounded-full blur-[80px] transition-transform duration-700 ease-in-out group-hover:translate-x-[-120px]" />

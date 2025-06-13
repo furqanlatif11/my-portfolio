@@ -8,12 +8,14 @@ import ReadyToWork from "./_components/ready-to-work";
 import Contact from "./_components/contact";
 import Footer from "./_components/footer";
 import InteractiveMap from "./_components/project-map";
+import IdeaToReality from "./_components/ideatoreality";
 
 
 export default function Home() {
   return (
     <>
       <HeroHeader />
+      <IdeaToReality/>
       <About />
       <Skills />
       <Experience />
