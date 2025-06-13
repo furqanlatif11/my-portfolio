@@ -163,7 +163,7 @@ export default function Projects() {
           </div>
 
           <p className="text-center text-white text-xl mt-6">
-            Let's Showcase Your Project Here
+            Let&apos;s Showcase Your Project Here
           </p>
         </div>
       </div>
