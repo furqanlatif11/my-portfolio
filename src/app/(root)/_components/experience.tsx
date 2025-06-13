@@ -13,39 +13,39 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    role: "Senior Frontend Developer",
-    company: "TechCorp Solutions",
-    duration: "2021 - Present",
+    role: "Software Engineer",
+    company: "ADYZER",
+    duration: "2024 - Present",
     description:
-      "Leading frontend development for enterprise applications serving 100k+ users. Architected scalable React solutions and mentored junior developers.",
+      "Architected modular and maintainable solutions using React and Next.js, improved performance and user experience, and collaborated across teams. Actively involved in learning new technologies and various code reviews.",
     tech: ["React", "TypeScript", "Next.js", "AWS"],
     icon: <FaLaptopCode className="text-blue-400 text-xl" />,
   },
   {
-    role: "Full-Stack Developer",
-    company: "InnovateLab",
-    duration: "2019 - 2021",
+    role: "Software Engineer - I",
+    company: "MSLM Dev",
+    duration: "2024 - 2024",
     description:
-      "Built scalable web applications from concept to deployment. Developed RESTful APIs and implemented modern frontend frameworks.",
-    tech: ["Node.js", "Express", "MongoDB", "Vue.js"],
+      "Developed custom web applications for startups and small businesses using React and Go. Built reusable UI components, integrated APIs, and collaborated with cross-functional teams to deliver scalable solutions on tight deadlines.",
+    tech: ["Node.js", "React", "Chartsjs", "Golang", "SASS", "REST API", "Git", "POSTGRESQL"],
     icon: <FaServer className="text-green-400 text-xl" />,
+  },
+  {
+    role: "Frontend Developer (Intern)",
+    company: "Programmers Force",
+    duration: "2023 - 2024",
+    description:
+      "Assisted in developing responsive web interfaces using Vue.js and Vuetify. Contributed to component-based UI design, API integration, and performance optimization for client-facing applications.",
+    tech: ["Vue", "Vuetify", "MongoDB", "jQuery", "Git", "Bootstrap", "REST APIs" ],
+    icon: <FaCode className="text-purple-400 text-xl" />,
   },
   {
     role: "Freelance Developer",
     company: "Various Clients",
-    duration: "2018 - 2019",
+    duration: "2022 - Present",
     description:
       "Delivered custom solutions for startups and small businesses. Specialized in e-commerce platforms and automation tools.",
-    tech: ["WordPress", "PHP", "MySQL", "jQuery"],
-    icon: <FaCode className="text-purple-400 text-xl" />,
-  },
-  {
-    role: "Junior Developer",
-    company: "StartupTech",
-    duration: "2017 - 2018",
-    description:
-      "Started career building responsive websites and learning modern development practices. Contributed to team projects and gained valuable industry experience.",
-    tech: ["HTML/CSS", "JavaScript", "Bootstrap", "Git"],
+    tech: ["HTML/CSS", "JavaScript", "Bootstrap", "Git", "Shopify", "React", "Next.js", "Tailwind CSS", "Node.js", "Express", "MongoDB", "PostgreSQL", ],
     icon: <FaRocket className="text-orange-400 text-xl" />,
   },
 ];
@@ -55,7 +55,7 @@ export default function Experience() {
     <section
       id="experience"
       className=" mt-20 p-10 bg-[#0f0f11] text-white text-center"
-    >   
+    >
       <div className="customWidth ">
         <h2 className="sectionHeading font-bold mb-2">Experience</h2>
         <p className="text-gray-400 mb-12">

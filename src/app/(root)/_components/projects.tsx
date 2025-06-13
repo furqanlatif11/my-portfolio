@@ -6,12 +6,12 @@ import Image from "next/image";
 import { Dialog } from "@headlessui/react";
 import Link from "next/link";
 import { Check, Github, Globe, Plus } from "lucide-react";
+import Button from "./button";
 
 // Add missing Project type definition
 type Project = (typeof projects)[number];
 
 const tabs = ["All Projects", "Frontend", "Full-Stack", "Freelance"] as const;
-
 
 const items = [
   { Icon: Plus, label: "Add Project", color: "white", bg: "bg-blue-600" },
@@ -57,10 +57,10 @@ export default function Projects() {
           <button
             key={tab}
             onClick={() => setSelectedTab(tab)}
-            className={`px-4 py-2 rounded-full text-base font-medium transition ${
+            className={`px-4 py-2 rounded-full text-base font-medium transition backdrop-blur-md ${
               selectedTab === tab
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-blue-600 text-white shadow-md"
+                : "bg-white/10 text-white border border-white/20 shadow-inner hover:bg-gray-600"
             }`}
           >
             {tab}
@@ -82,21 +82,19 @@ export default function Projects() {
                   alt={project.title}
                   width={500}
                   height={300}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 "
                 />
                 <div
                   className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300"
                   onClick={() => setSelectedProject(project)}
                 >
-                  <button className="bg-white text-blue-600 font-semibold px-4 py-2 rounded">
-                    View Details
-                  </button>
+                  <Button label="View Details" />
                 </div>
               </div>
 
               {/* Project details */}
               <div className="p-4">
-                <h3 className="text-lg text-white font-semibold">
+                <h3 className="text-lg text-white ">
                   {project.title}
                 </h3>
                 <p className="text-base text-gray-400 mt-3">
@@ -106,7 +104,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-sm bg-blue-100 text-blue-600 px-2 py-1 rounded-full"
+                      className="text-xs px-2 py-1 bg-white/10 border border-white/10 rounded-full "
                     >
                       {tag}
                     </span>
@@ -129,6 +127,7 @@ export default function Projects() {
                     <Link
                       href={project.details.githubUrl}
                       target="_blank"
+                      rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       className="inline-block text-white rounded font-medium"
                     >
@@ -230,14 +229,13 @@ export default function Projects() {
                 </p>
 
                 <div className="flex gap-4">
-                  <a
-                    href={selectedProject.details.liveDemoUrl}
+                  <Button
+                    label="View Live Demo"
                     target="_blank"
-                    rel="noreferrer"
-                    className="bg-blue-600 text-white px-4 py-2 rounded"
-                  >
-                    View Live Demo
-                  </a>
+                    href={selectedProject.details.liveDemoUrl}
+                    variant="outlined"
+                    className="w-full"
+                  />
                 </div>
               </Dialog.Panel>
             </div>

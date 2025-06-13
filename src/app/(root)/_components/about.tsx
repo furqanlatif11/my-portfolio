@@ -134,7 +134,7 @@ const About: React.FC = () => {
                   width={20}
                   height={20}
                 />
-                <p>Programmers Force • Jan 2024 – Feb 2024</p>
+                <p>Programmers Force • Dec 2023 – Feb 2024</p>
                 <p>Custom solutions for startups & small businesses</p>
                 <p>Job Type: On-site</p>
               </div>
