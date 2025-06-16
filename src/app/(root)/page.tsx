@@ -9,6 +9,7 @@ import Contact from "./_components/contact";
 import Footer from "./_components/footer";
 // import InteractiveMap from "./_components/project-map";
 import IdeaToReality from "./_components/ideatoreality";
+import TestimonialMarquee  from "./_components/testimonial";
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       {/* <InteractiveMap/> */}
       <Services/>
       <ReadyToWork title="Ready to Work Together?" description="Let’s create something amazing!"/>
+      <TestimonialMarquee/>
       <Contact/>
       <Footer/>
     </>

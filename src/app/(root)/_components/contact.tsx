@@ -5,6 +5,7 @@ import { Listbox } from "@headlessui/react";
 import {
   Check,
   ChevronDown,
+  Clipboard,
   Clock4,
   Github,
   Linkedin,
@@ -43,7 +44,13 @@ export default function Contact() {
   const [selectedProject, setSelectedProject] = useState(projectTypes[0]);
   const [selectedRange, setSelectedRange] = useState(projectRanges[0]);
   const [selectedTimeline, setSelectedTimeline] = useState(projectTimeline[0]);
+  const [copiedField, setCopiedField] = useState("");
 
+  const handleCopy = (text: string, field: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(""), 1500); // Reset after 1.5s
+  };
   return (
     <section className="py-16 px-4 md:px-16 text-white">
       <div className="max-w-7xl mx-auto">
@@ -63,25 +70,49 @@ export default function Contact() {
               <ul className="mt-4 space-y-4">
                 <li className="flex items-center gap-4">
                   <div className="bg-blue-100 p-3 rounded-md">
-                    <Mail className="w-6 h-6 text-blue-600 " />
+                    <Mail className="w-6 h-6 text-blue-600" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="font-bold">Email:</p>
-                    <a
-                      href="mailto:alex.johnson@email.com"
-                      className="text-blue-600 hover:underline"
-                    >
-                      alex.johnson@email.com
-                    </a>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href="mailto:furqanlatif615@gmail.com"
+                        className="text-blue-600 hover:underline"
+                      >
+                        furqanlatif615@gmail.com
+                      </a>
+                      <Clipboard
+                        className="w-4 h-4 text-gray-500 cursor-pointer hover:text-green-600"
+                        onClick={() =>
+                          handleCopy("furqanlatif615@gmail.com", "email")
+                        }
+                      />
+                      {copiedField === "email" && (
+                        <span className="text-green-600 text-sm ml-2">
+                          Copied!
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </li>
                 <li className="flex items-center gap-4">
                   <div className="bg-green-100 p-3 rounded-md">
-                    <Phone className="w-6 h-6 text-green-600 " />
+                    <Phone className="w-6 h-6 text-green-600" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="font-medium">Phone:</p>
-                    <p>+1 (555) 123-4567</p>
+                    <div className="flex items-center gap-2">
+                      <p>+92 320 8480314</p>
+                      <Clipboard
+                        className="w-4 h-4 text-gray-500 cursor-pointer hover:text-green-600"
+                        onClick={() => handleCopy("+923208480314", "phone")}
+                      />
+                      {copiedField === "phone" && (
+                        <span className="text-green-600 text-sm ml-2">
+                          Copied!
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </li>
                 <li className="flex items-center gap-4">
@@ -90,7 +121,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Location:</p>
-                    <p>San Francisco, CA</p>
+                    <p>Lahore, Pakistan</p>
                   </div>
                 </li>
                 <li className="flex items-center gap-4">
@@ -109,13 +140,20 @@ export default function Contact() {
               <h3 className="text-xl font-semibold">Follow Me</h3>
               <div className="flex gap-4 mt-2">
                 <a
-                  href="#"
-                  className="text-blue-500 bg-blue-800 p-3 rounded-md"
+                  href="https://www.linkedin.com/in/furqan-latif-profile/"
+                   target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 bg-blue-800 p-3 rounded-full"
                 >
                   <Linkedin className="w-6 h-6 text-white " />
                 </a>
-                <a href="#" className=" bg-[#222222] p-3 rounded-md">
-                  <Github className="w-6 h-6 text-white " />
+                <a
+                  href="https://github.com/furqanlatif11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#222222] p-3 rounded-full"
+                >
+                  <Github className="w-6 h-6 text-white" />
                 </a>
               </div>
             </div>

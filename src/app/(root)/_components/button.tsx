@@ -24,7 +24,7 @@ const Button: React.FC<CommonButtonProps> = ({
   showHoverIcon = true,
 }) => {
   const baseStyles = clsx(
-    "inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-md transition-all duration-300 group overflow-hidden relative",
+    "inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded transition-all duration-300 group overflow-hidden relative",
     {
       "bg-blue-600 text-white hover:bg-blue-700": variant === "solid",
       "border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white":

@@ -49,10 +49,16 @@ const About: React.FC = () => {
           </div>
 
           <div className="flex gap-4">
-            <Button label="Download CV" variant="solid" />
+            <a
+              href="/assets/images/M_Furqan_CV.pdf"
+              download
+              className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded flex items-center"
+            >
+              Download CV
+            </a>
             <Button
               label="Let's Connect"
-              href="/contact"
+              href="https://www.linkedin.com/in/furqan-latif-profile/"
               variant="outlined"
               target="_blank"
               showHoverIcon={true}
