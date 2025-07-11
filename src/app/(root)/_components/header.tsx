@@ -148,7 +148,7 @@ export default function HeroSection() {
           className="text-gray-400 mt-6 max-w-xl mx-auto"
         >
           I engineer digital experiences with clean code, aesthetic designs, and
-          powerful backend systems. Let's build something extraordinary.
+          powerful backend systems. Let&apos;s build something extraordinary.
         </motion.p>
 
         {/* Buttons */}
