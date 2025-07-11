@@ -11,13 +11,11 @@ interface NavLink {
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [showTopNav, setShowTopNav] = useState(true);
   const [showBottomNav, setShowBottomNav] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
-    let lastScroll = window.scrollY;
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -30,7 +28,6 @@ export default function Navbar() {
       );
       setAtBottom(scrollY + windowHeight >= fullHeight - 100);
 
-      lastScroll = scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
