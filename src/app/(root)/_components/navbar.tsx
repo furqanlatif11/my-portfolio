@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 interface NavLink {
   name: string;
@@ -13,20 +12,25 @@ interface NavLink {
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showTopNav, setShowTopNav] = useState(true);
   const [showBottomNav, setShowBottomNav] = useState(false);
   const [atBottom, setAtBottom] = useState(false);
 
   useEffect(() => {
+    let lastScroll = window.scrollY;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const fullHeight = document.body.scrollHeight;
 
-      setIsScrolled(scrollY > 50);
+      setShowTopNav(scrollY < 50);
       setShowBottomNav(
         scrollY > 200 && scrollY + windowHeight < fullHeight - 200
       );
       setAtBottom(scrollY + windowHeight >= fullHeight - 100);
+
+      lastScroll = scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,62 +52,59 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Navbar */}
-      <nav>
-        <div className="customWidth">
-          <div className="flex justify-between items-center">
-            <Image src="/assets/images/mfLogo.png" alt="Logo" width={60} height={60}/>
-            <div className="hidden md:flex space-x-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`font-medium transition ${
-                    isScrolled
-                      ? "text-black hover:text-blue-500"
-                      : "text-white hover:text-blue-300"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-
-            <button
-              onClick={toggleDrawer}
-              className="md:hidden text-gray-800 focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              {drawerOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-
-          <div
-            className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-              drawerOpen ? "translate-x-0" : "translate-x-full"
-            } md:hidden z-50`}
-          >
-            <div className="p-4 flex justify-between items-center border-b">
-              <h2 className="text-lg font-bold">Menu</h2>
-              <button onClick={toggleDrawer} aria-label="Close menu">
-                <X size={24} />
+      {/* Top Navbar (Hidden on scroll down) */}
+      {showTopNav && (
+        <nav className="fixed top-0 left-0 w-full z-50 bg-transparent transition-opacity duration-300">
+          <div className="customWidth py-4 px-6">
+            <div className="flex justify-center items-center">
+              {/* <div className="hidden md:flex space-x-8">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-white hover:text-blue-400 font-medium transition"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div> */}
+              <button
+                onClick={toggleDrawer}
+                className="md:hidden text-white focus:outline-none absolute right-6"
+                aria-label="Toggle menu"
+              >
+                {drawerOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
             </div>
-            <div className="flex flex-col p-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-700 hover:text-blue-500 font-medium"
-                  onClick={() => setDrawerOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
           </div>
+        </nav>
+      )}
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+          drawerOpen ? "translate-x-0" : "translate-x-full"
+        } md:hidden z-50`}
+      >
+        <div className="p-4 flex justify-between items-center border-b">
+          <h2 className="text-lg font-bold">Menu</h2>
+          <button onClick={toggleDrawer} aria-label="Close menu">
+            <X size={24} />
+          </button>
         </div>
-      </nav>
+        <div className="flex flex-col p-4 space-y-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-gray-700 hover:text-blue-500 font-medium"
+              onClick={() => setDrawerOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
 
       {/* Bottom Pill Navbar */}
       <div

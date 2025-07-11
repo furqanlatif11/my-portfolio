@@ -32,7 +32,7 @@ export default function IdeaToReality() {
   return (
     <section className="relative w-full px-6 py-16 text-white">
       <div className="customWidth mx-auto text-center">
-        <h2 className="sectionHeading font-bold mb-4 tracking-tight">
+        <h2 className="sectionHeading font-bold mb-4 tracking-tight text-[#00FF9D]">
           From Idea to Reality
         </h2>
         <p className="text-lg text-gray-300 mb-12 max-w-xl mx-auto">
