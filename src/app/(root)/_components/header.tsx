@@ -113,7 +113,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl font-bold mb-4 text-[#00FF9D] drop-shadow-[0_0_6px_rgba(0,255,135,0.2)]"
+          className="text-4xl sm:text-5xl font-bold mb-4 text-green-500  drop-shadow-[0_0_6px_rgba(0,255,135,0.2)]"
         >
           Hello, I&apos;m Muhammad Furqan Latif
         </motion.h1>
@@ -191,7 +191,7 @@ export default function HeroSection() {
               transition={{ delay: 2.2 + i * 0.2, duration: 0.8 }}
               className="flex flex-col items-center justify-center p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-md shadow-md hover:shadow-xl transition hover:scale-105"
             >
-              <p className="text-4xl font-bold text-[#00FF9D] drop-shadow-sm">
+              <p className="text-4xl font-bold text-green-500 drop-shadow-sm">
                 {item.value}
               </p>
               <p className="text-sm text-gray-300 mt-2">{item.label}</p>

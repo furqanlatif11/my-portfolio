@@ -2,26 +2,23 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Rocket, Target } from "lucide-react";
-import Button from "./button";
+import { Lightbulb, Rocket, Target, Cpu } from "lucide-react";
+// import Button from "./button";
 
 const phases = [
   {
     title: "Spark the Idea",
-    description:
-      "We listen, brainstorm, and understand your goals at the root level.",
+    description: "We listen, brainstorm, and understand your goals at the root level.",
     icon: <Lightbulb className="text-yellow-400" size={28} />,
   },
   {
     title: "Engineer the Solution",
-    description:
-      "We design, prototype, and build functional digital solutions.",
+    description: "We design, prototype, and build functional digital solutions.",
     icon: <Rocket className="text-blue-400" size={28} />,
   },
   {
     title: "Achieve the Goal",
-    description:
-      "We launch with purpose — driving real, measurable business success.",
+    description: "We launch with purpose — driving real, measurable business success.",
     icon: <Target className="text-green-400" size={28} />,
   },
 ];
@@ -59,114 +56,122 @@ export default function IdeaToReality() {
           ))}
         </div>
 
-        <Button
+        {/* <Button
           label="Share Your Project Idea"
           onClick={() => setShowForm(true)}
           className="bg-blue-600 hover:bg-blue-700 text-white"
-        />
+        /> */}
 
         {/* Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex justify-center items-center z-50 p-4">
-            <div className="bg-white text-black rounded-xl max-w-4xl w-full p-8 relative shadow-xl">
-              <button
-                onClick={() => setShowForm(false)}
-                className="absolute top-3 right-4 text-gray-600 text-xl font-bold hover:text-black"
-              >
-                ×
-              </button>
-              <h3 className="text-3xl font-semibold mb-6 text-center">
-                Quick Project Inquiry
-              </h3>
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-5xl min-h-[70vh] rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col md:flex-row"
+            >
+              {/* Left Creative Panel */}
+              <div className="hidden md:flex flex-col justify-center items-center w-1/2 bg-gradient-to-br from-[#00FF9D]/20 via-transparent to-blue-500/20 relative p-8">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,#00FF9D,transparent_60%)] opacity-30 animate-pulse"></div>
+                <Cpu size={80} className="text-[#00FF9D] mb-6 drop-shadow-lg" />
+                <h3 className="text-2xl font-bold mb-4 text-white drop-shadow">
+                  Let’s Build Something Futuristic
+                </h3>
+                <p className="text-gray-200 text-sm max-w-sm leading-relaxed">
+                  Share your idea, and we’ll transform it into a digital product
+                  with impact. From design to deployment — we engineer innovation.
+                </p>
+              </div>
 
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Full Name */}
-                <div className="col-span-1">
-                  <label className="block text-sm font-medium mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                </div>
+              {/* Right Form Panel */}
+              <div className="w-full md:w-1/2 p-6 md:p-10 relative">
+                {/* Close button */}
+                <button
+                  onClick={() => setShowForm(false)}
+                  className="absolute top-3 right-4 text-gray-300 text-2xl font-bold hover:text-white"
+                >
+                  ×
+                </button>
 
-                {/* Email */}
-                <div className="col-span-1">
-                  <label className="block text-sm font-medium mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                </div>
+                <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-white drop-shadow">
+                  Quick Project Inquiry
+                </h3>
 
-                {/* Service Needed */}
-                <div className="col-span-1">
-                  <label className="block text-sm font-medium mb-1">
-                    Service Needed
-                  </label>
-                  <select
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  >
-                    <option>Website Redesign</option>
-                    <option>Shopify Development</option>
-                    <option>Full-stack Web App</option>
-                    <option>Branding / UI Design</option>
-                    <option>Other</option>
-                  </select>
-                </div>
+                <form className="grid grid-cols-1 gap-5">
+                  {/* Full Name */}
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      className="w-full p-3 rounded-xl bg-white/10 border border-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00FF9D] focus:border-[#00FF9D] transition-all"
+                      required
+                    />
+                  </div>
 
-                {/* Budget */}
-                <div className="col-span-1">
-                  <label className="block text-sm font-medium mb-1">
-                    Estimated Budget (USD)
-                  </label>
-                  <input
-                    type="number"
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
+                  {/* Email */}
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="w-full p-3 rounded-xl bg-white/10 border border-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00FF9D] transition-all"
+                      required
+                    />
+                  </div>
 
-                {/* Project Description */}
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium mb-1">
-                    Project Description
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Tell us more about what you need..."
-                    required
-                  />
-                </div>
+                  {/* Service Needed */}
+                  <div>
+                    <select
+                      className="w-full p-3 rounded-xl bg-white/10 border border-transparent text-white focus:outline-none focus:ring-2 focus:ring-[#00FF9D] transition-all"
+                      required
+                    >
+                      <option className="bg-black text-white">Website Redesign</option>
+                      <option className="bg-black text-white">Shopify Development</option>
+                      <option className="bg-black text-white">Full-stack Web App</option>
+                      <option className="bg-black text-white">Branding / UI Design</option>
+                      <option className="bg-black text-white">Other</option>
+                    </select>
+                  </div>
 
-                {/* File Upload */}
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium mb-1">
-                    Attach File (optional)
-                  </label>
-                  <input
-                    type="file"
-                    className="w-full p-2 border border-gray-300 rounded-md"
-                  />
-                </div>
+                  {/* Budget */}
+                  <div>
+                    <input
+                      type="number"
+                      placeholder="Estimated Budget (USD)"
+                      className="w-full p-3 rounded-xl bg-white/10 border border-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00FF9D] transition-all"
+                    />
+                  </div>
 
-                {/* Submit Button */}
-                <div className="md:col-span-2">
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition-all"
-                  >
-                    Submit Inquiry
-                  </button>
-                </div>
-              </form>
-            </div>
+                  {/* Project Description */}
+                  <div>
+                    <textarea
+                      rows={4}
+                      placeholder="Tell us more about what you need..."
+                      className="w-full p-3 rounded-xl bg-white/10 border border-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00FF9D] transition-all"
+                      required
+                    />
+                  </div>
+
+                  {/* File Upload */}
+                  <div>
+                    <input
+                      type="file"
+                      className="w-full text-gray-200 file:rounded-md file:bg-[#00FF9D]/20 file:text-white file:border-0 file:px-3 file:py-2 hover:file:bg-[#00FF9D]/30"
+                    />
+                  </div>
+
+                  {/* Submit */}
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full bg-green-500 text-black font-semibold py-3 rounded-xl transition-all shadow-lg"
+                    >
+                      Submit Inquiry 🚀
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </motion.div>
           </div>
         )}
       </div>

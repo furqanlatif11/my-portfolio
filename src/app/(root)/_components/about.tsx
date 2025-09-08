@@ -34,7 +34,11 @@ const About: React.FC = () => {
               <h4 className="font-semibold mb-2">Frontend</h4>
               <ul className="space-y-1 text-white">
                 <li>✅ React & Next.js</li>
+                <li>✅ HTML & CSS</li>
                 <li>✅ TypeScript</li>
+                <li>✅ JavaScript</li>
+                <li>✅ Vue.js</li>
+                <li>✅ Bootstrap</li>
                 <li>✅ Tailwind CSS</li>
               </ul>
             </div>
@@ -42,8 +46,12 @@ const About: React.FC = () => {
               <h4 className="font-semibold mb-2">Backend</h4>
               <ul className="space-y-1 text-white">
                 <li>✅ Node.js & Express</li>
-                <li>✅ Python</li>
-                <li>✅ PostgreSQL & MongoDB</li>
+                <li>✅ RESTful APIs</li>
+                <li>✅ GraphQL</li>
+                <li>✅ MongoDB & Mongoose</li>
+                <li>✅ PostgreSQL</li>
+                <li>✅ Prisma</li>
+                <li>✅ MySQL</li>
               </ul>
             </div>
           </div>
@@ -52,7 +60,7 @@ const About: React.FC = () => {
             <a
               href="/assets/images/M_Furqan_CV.pdf"
               download
-              className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded flex items-center"
+              className="bg-green-500 text-white hover:bg-green-700 px-6 py-3 rounded flex items-center"
             >
               Download CV
             </a>

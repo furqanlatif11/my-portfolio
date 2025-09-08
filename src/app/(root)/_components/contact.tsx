@@ -8,11 +8,11 @@ import {
   Clipboard,
   Clock4,
   Github,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
 } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 const projectTypes = [
   "Please Select Project Type",
   "Frontend Development",
@@ -143,9 +143,9 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/furqan-latif-profile/"
                    target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 bg-blue-800 p-3 rounded-full"
+                  className="bg-[#222222] p-3 rounded-full"
                 >
-                  <Linkedin className="w-6 h-6 text-white " />
+                  <FaLinkedin className="w-6 h-6 text-white " />
                 </a>
                 <a
                   href="https://github.com/furqanlatif11"
@@ -173,11 +173,11 @@ export default function Contact() {
                 Let’s discuss your project requirements.
               </p>
             </div>
-            <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 top-0 left-64 -z-10"></div>
+            <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-30 top-0 right-20 -z-10"></div>
           </div>
 
           {/* Right Column - Form */}
-          <form className="space-y-6 bg-white/5 dark:bg-white/10 backdrop-blur-md border border-blue-600 shadow-lg rounded-2xl p-8 text-white">
+          <form className="space-y-6 bg-white/5 dark:bg-white/10 backdrop-blur-md border border-green-600 shadow-lg rounded-2xl p-8 text-white">
             <h3 className="text-3xl font-bold text-white mb-4">Send Message</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -185,10 +185,10 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder=" "
-                  className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                  className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-500 transition"
                   required
                 />
-                <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-400">
+                <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-green-400">
                   First Name
                 </label>
               </div>
@@ -197,10 +197,10 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder=" "
-                  className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                  className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-500 transition"
                   required
                 />
-                <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-400">
+                <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-green-400">
                   Last Name
                 </label>
               </div>
@@ -210,10 +210,10 @@ export default function Contact() {
               <input
                 type="email"
                 placeholder=" "
-                className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-500 transition"
                 required
               />
-              <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-400">
+              <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-green-400">
                 Email Address
               </label>
             </div>
@@ -222,9 +222,9 @@ export default function Contact() {
               <input
                 type="tel"
                 placeholder=" "
-                className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-500 transition"
               />
-              <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-400">
+              <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-green-400">
                 Phone Number (Optional)
               </label>
             </div>
@@ -233,7 +233,7 @@ export default function Contact() {
             <div className="w-full">
               <Listbox value={selectedProject} onChange={setSelectedProject}>
                 <div className="relative">
-                  <Listbox.Button className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white/90 flex justify-between items-center hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                  <Listbox.Button className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white/90 flex justify-between items-center hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
                     {selectedProject}
                     <ChevronDown className="ml-2 w-4 h-4 text-white/60" />
                   </Listbox.Button>
@@ -245,8 +245,8 @@ export default function Contact() {
                         value={type}
                         className={({ active, selected }) =>
                           `cursor-pointer px-4 py-2 ${
-                            active ? "bg-blue-600 text-white" : "text-white/80"
-                          } ${selected ? "bg-blue-700" : ""}`
+                            active ? "bg-green-600 text-white" : "text-white/80"
+                          } ${selected ? "bg-green-700" : ""}`
                         }
                       >
                         {({ selected }) => (
@@ -267,7 +267,7 @@ export default function Contact() {
             <div className="w-full">
               <Listbox value={selectedRange} onChange={setSelectedRange}>
                 <div className="relative">
-                  <Listbox.Button className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white/90 flex justify-between items-center hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                  <Listbox.Button className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white/90 flex justify-between items-center hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
                     {selectedRange}
                     <ChevronDown className="ml-2 w-4 h-4 text-white/60" />
                   </Listbox.Button>
@@ -279,8 +279,8 @@ export default function Contact() {
                         value={type}
                         className={({ active, selected }) =>
                           `cursor-pointer px-4 py-2 ${
-                            active ? "bg-blue-600 text-white" : "text-white/80"
-                          } ${selected ? "bg-blue-700" : ""}`
+                            active ? "bg-green-600 text-white" : "text-white/80"
+                          } ${selected ? "bg-green-700" : ""}`
                         }
                       >
                         {({ selected }) => (
@@ -300,7 +300,7 @@ export default function Contact() {
             <div className="w-full">
               <Listbox value={selectedTimeline} onChange={setSelectedTimeline}>
                 <div className="relative">
-                  <Listbox.Button className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white/90 flex justify-between items-center hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                  <Listbox.Button className="w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 text-white/90 flex justify-between items-center hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 transition">
                     {selectedTimeline}
                     <ChevronDown className="ml-2 w-4 h-4 text-white/60" />
                   </Listbox.Button>
@@ -312,8 +312,8 @@ export default function Contact() {
                         value={type}
                         className={({ active, selected }) =>
                           `cursor-pointer px-4 py-2 ${
-                            active ? "bg-blue-600 text-white" : "text-white/80"
-                          } ${selected ? "bg-blue-700" : ""}`
+                            active ? "bg-green-600 text-white" : "text-white/80"
+                          } ${selected ? "bg-green-700" : ""}`
                         }
                       >
                         {({ selected }) => (
@@ -335,16 +335,16 @@ export default function Contact() {
               <textarea
                 placeholder=" "
                 rows={4}
-                className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="peer w-full bg-transparent border border-white/20 rounded-lg px-4 py-3 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-500 transition"
                 required
               ></textarea>
-              <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-400">
+              <label className="absolute left-4 top-2 text-sm text-white/60 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/40 peer-focus:top-2 peer-focus:text-sm peer-focus:text-green-400">
                 Project details, goals, and requirements
               </label>
             </div>
 
             <label className="flex items-center gap-2 text-white/80">
-              <input type="checkbox" className="accent-blue-600" />
+              <input type="checkbox" className="accent-green-600" />
               <span className="text-sm">
                 Subscribe to my newsletter for development tips and updates
               </span>
@@ -352,7 +352,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-semibold py-3 rounded-xl hover:brightness-110 hover:scale-[1.01] transition"
+              className="w-full bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold py-3 rounded-xl hover:brightness-110 hover:scale-[1.01] transition"
             >
               Send Message
             </button>
@@ -366,5 +366,5 @@ export default function Contact() {
 // Tailwind component class 'input'
 // Add this to your global styles if you want reusable styling:
 // .input {
-//   @apply border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+//   @apply border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500;
 // }

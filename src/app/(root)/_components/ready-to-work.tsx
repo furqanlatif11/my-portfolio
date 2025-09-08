@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import * as React from "react";
 
 interface ReadyToWorkProps {
@@ -15,18 +15,13 @@ const ReadtoWork: React.FC<ReadyToWorkProps> = ({ title, description }) => {
         <h2 className="text-white sectionHeading">{title}</h2>
         <p className="text-white paragraph">{description}</p>
         <div className="flex gap-6 justify-center">
-          <Link
-            href="/contact"
-            className="bg-blue-600 text-white px-6 py-3 rounded-full mt-4 hover:bg-blue-700 transition-colors mt-6"
+          
+          <a
+            href="mailto:furqanlatif615@gmail.com"
+            className="border border-green-500 text-white px-6 py-3 rounded-full mt-4 hover:bg-green-700 transition-colors mt-6"
           >
-            Get Started
-          </Link>
-          <Link
-            href="/contact"
-            className="border border-blue-600 text-white px-6 py-3 rounded-full mt-4 hover:bg-blue-700 transition-colors mt-6"
-          >
-            Schedule Consultation
-          </Link>
+            Get Started Now
+          </a>
         </div>
       </div>
     </section>
