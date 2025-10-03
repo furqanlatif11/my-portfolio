@@ -58,7 +58,7 @@ export default function Contact() {
     {
       icon: FaLinkedin,
       title: "LinkedIn",
-      subtitle: "Let's connect professionally",
+      subtitle: "Let&apos;s connect professionally",
       value: "View Profile",
       href: "https://www.linkedin.com/in/furqan-latif-profile/",
       color: "from-blue-600 to-blue-400",
@@ -78,13 +78,13 @@ export default function Contact() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-4">
             <Sparkles className="w-4 h-4 text-green-400" />
-            <span className="text-sm text-green-400 font-medium">Let's Connect</span>
+            <span className="text-sm text-green-400 font-medium">Let&apos;s Connect</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
             Get In Touch
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a project in mind? Choose your preferred way to reach out and let's turn your ideas into reality.
+            Have a project in mind? Choose your preferred way to reach out and let&apos;s turn your ideas into reality.
           </p>
         </div>
 
@@ -198,7 +198,7 @@ export default function Contact() {
         <div className="p-8 rounded-2xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 text-center backdrop-blur-sm">
           <h3 className="text-2xl font-bold mb-2">Ready to Start Your Project?</h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            I'm currently accepting new freelance and contract opportunities. Let's discuss how I can help bring your vision to life.
+            I&apos;m currently accepting new freelance and contract opportunities. Let&apos;s discuss how I can help bring your vision to life.
           </p>
           <a
             href="mailto:furqanlatif615@gmail.com"
