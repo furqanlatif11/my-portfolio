@@ -6,7 +6,7 @@ import { FaArrowDown } from "react-icons/fa";
 import Button from "./button";
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false);
+  const [, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   return (

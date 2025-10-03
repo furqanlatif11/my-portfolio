@@ -5,7 +5,7 @@ import { projects } from "../data/projects";
 import Image from "next/image";
 import { Dialog } from "@headlessui/react";
 import Link from "next/link";
-import { Check, CodeXml, Github, Globe, Clock, Users, Zap } from "lucide-react";
+import { Check,Github, Globe, } from "lucide-react";
 import Button from "./button";
 import { motion } from "framer-motion";
 
@@ -375,7 +375,7 @@ export default function Projects() {
             Ready to Start Your Project?
           </h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Let's discuss how I can help bring your idea to life in your defined
+            Let&apos;s discuss how I can help bring your idea to life in your defined
             timeline.
           </p>
           <Button
