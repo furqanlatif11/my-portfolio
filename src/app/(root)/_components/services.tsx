@@ -161,14 +161,14 @@ export default function ServicesSection() {
 
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
-      <h2 className="sectionHeading font-bold text-center mb-4">
+      <h2 className="sectionHeading font-bold text-center mb-4" id="services">
         Services
       </h2>
       <p className="text-center text-gray-500 mb-12">
         Comprehensive development solutions from concept to deployment
       </p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"  >
         {services.map((service) => (
           <div
             key={service.id}

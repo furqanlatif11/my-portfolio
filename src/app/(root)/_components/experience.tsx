@@ -62,7 +62,7 @@ export default function Experience() {
           Professional journey across software houses and freelance projects
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto" id="experience">
           {experiences.map((exp, i) => (
             <ExperienceCard key={i} {...exp} />
           ))}
@@ -96,6 +96,7 @@ function ExperienceCard({
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
+      
       className="relative overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg rounded-2xl p-6 text-left transition-transform duration-300 hover:scale-[1.015] group"
     >
       {/* Mouse Glow */}
@@ -111,7 +112,7 @@ function ExperienceCard({
       />
 
       {/* Content */}
-      <div className="flex items-center gap-3 mb-4 relative z-10">
+      <div className="flex items-center gap-3 mb-4 relative z-10" >
         <div className="p-3 bg-white/10 rounded-full">{icon}</div>
         <div>
           <h3 className="text-lg font-semibold">{role}</h3>

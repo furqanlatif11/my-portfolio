@@ -9,11 +9,11 @@ interface ReadyToWorkProps {
 const ReadtoWork: React.FC<ReadyToWorkProps> = ({ title, description }) => {
   return (
     <section className=" p-8  text-center relative">
-      <div className="absolute w-72 h-72 bg-teal-500 rounded-full blur-3xl opacity-30 top-0 right-40 -z-10"></div>
+      <div className="absolute w-72 h-72 bg-teal-500 rounded-full blur-3xl opacity-30 top-0 right-16 md:right-40 -z-10"></div>
 
       <div className="customWidth">
         <h2 className="text-white sectionHeading">{title}</h2>
-        <p className="text-white paragraph">{description}</p>
+        <p className="text-white paragraph !text-center mt-2">{description}</p>
         <div className="flex gap-6 justify-center">
           
           <a

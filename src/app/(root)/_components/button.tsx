@@ -11,7 +11,7 @@ type CommonButtonProps = {
   target?: "_blank" | "_self" | "_parent" | "_top";
   className?: string;
   showHoverIcon?: boolean;
-  
+  scrollToId?: string; // Changed from 'id' to 'scrollToId' for clarity
 };
 
 const Button: React.FC<CommonButtonProps> = ({
@@ -22,6 +22,7 @@ const Button: React.FC<CommonButtonProps> = ({
   target = "_self",
   className = "",
   showHoverIcon = true,
+  scrollToId,
 }) => {
   const baseStyles = clsx(
     "inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded transition-all duration-300 group overflow-hidden relative",
@@ -50,7 +51,65 @@ const Button: React.FC<CommonButtonProps> = ({
     </>
   );
 
+  const handleScrollClick = (e: React.MouseEvent) => {
+    if (scrollToId) {
+      e.preventDefault();
+      const targetElement = document.getElementById(scrollToId);
+
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop;
+        const navbarHeight = 80; // Adjust based on your fixed navbar height
+
+        window.scrollTo({
+          top: offsetTop - navbarHeight,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    // Call custom onClick if provided
+    if (onClick) {
+      onClick();
+    }
+  };
+
+  // If scrollToId is provided, use button with scroll handler
+  if (scrollToId) {
+    return (
+      <button onClick={handleScrollClick} className={baseStyles}>
+        {buttonContent}
+      </button>
+    );
+  }
+
+  // If href is provided, use Link
   if (href) {
+    // Handle hash links with smooth scroll
+    if (href.startsWith("#")) {
+      const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        const targetId = href.replace("#", "");
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop;
+          const navbarHeight = 80;
+
+          window.scrollTo({
+            top: offsetTop - navbarHeight,
+            behavior: "smooth",
+          });
+        }
+      };
+
+      return (
+        <Link href={href} onClick={handleHashClick} className={baseStyles}>
+          {buttonContent}
+        </Link>
+      );
+    }
+
+    // Regular links without scroll
     return (
       <Link href={href} target={target} className={baseStyles}>
         {buttonContent}
@@ -58,6 +117,7 @@ const Button: React.FC<CommonButtonProps> = ({
     );
   }
 
+  // Default button with onClick
   return (
     <button onClick={onClick} className={baseStyles}>
       {buttonContent}

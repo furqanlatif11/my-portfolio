@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description:
       "A UAE based learning management system that connects students with tutors for personalized learning experiences.",
     tags: ["NextJs", "Node.js", "ConvexDB", "TypeScript"],
-    imageUrl: "/assets/images/skillNexusCoverImage.png",
+    imageUrl: "/assets/images/skillNexusCoverImage.PNG",
     details: {
       technologies: [
         "NextJs",
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     description:
       "A USA based online multiple services providing compant that excels in various security and data services.",
     tags: ["HMTL", "CSS", "Bootstrap", "JavaScript", "jQuery"],
-    imageUrl: "/assets/images/KNCoverImage.png",
+    imageUrl: "/assets/images/KNCoverImage.PNG",
     details: {
       technologies: ["HMTL", "CSS", "Bootstrap", "JavaScript", "jQuery"],
       features: [
@@ -117,12 +117,12 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "AH Engineerng Services",
+    title: "A. H. Engineerng Services",
     category: ["Full-Stack", "Freelance"],
     description:
       "Designed and developed a professional website for AH Engineering Services to showcase their industrial automation products and services.",
     tags: ["NextJs", "Tailwind CSS", "Typescript", "Node.js"],
-    imageUrl: "/assets/images/ahEngCoverImage.png",
+    imageUrl: "/assets/images/ahEngCoverImage.PNG",
     details: {
       technologies: [
         "NextJs",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     description:
       "During my role at MSLM, I built a clean, responsive email verification landing page for MslmCloud, focusing on clarity, performance, and user experience.",
     tags: ["React", "SASS", "Typescript", "REST APIs"],
-    imageUrl: "/assets/images/mslmEmailVerifyCoverImage.png",
+    imageUrl: "/assets/images/mslmEmailVerifyCoverImage.PNG",
     details: {
       technologies: [
         "React",

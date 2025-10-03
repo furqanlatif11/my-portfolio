@@ -38,6 +38,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop;
+      const navbarHeight = 80; // Adjust if you have a fixed navbar at top
+      
+      window.scrollTo({
+        top: offsetTop - navbarHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       {/* Bottom Pill Navbar for md+ screens */}
@@ -53,6 +71,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
+              onClick={(e) => handleSmoothScroll(e, link.href)}
               className="text-base font-medium text-white hover:text-[#00FF9D] transition"
             >
               {link.name}
@@ -94,7 +113,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="px-4 py-2 rounded-lg bg-white/10 text-white text-sm font-medium shadow-md hover:bg-[#00FF9D]/20 backdrop-blur-md border border-white/20"
                   >
                     {link.name}

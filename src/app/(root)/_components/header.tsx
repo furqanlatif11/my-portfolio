@@ -160,13 +160,13 @@ export default function HeroSection() {
         >
           <Button
             label="Explore Now"
-            href="#projects"
+            scrollToId='projects'
             variant="solid"
             showHoverIcon
           />
           <Button
             label="Contact Me"
-            href="#contact"
+            scrollToId='contact'
             variant="outlined"
             showHoverIcon
           />

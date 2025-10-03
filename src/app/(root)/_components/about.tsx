@@ -6,7 +6,7 @@ import Button from "./button";
 
 const About: React.FC = () => {
   return (
-    <section className="py-20 px-6 customWidth mx-auto relative">
+    <section className="py-20 px-6 customWidth mx-auto relative" id="about">
       <h2 className="sectionHeading font-bold text-center mb-4">About</h2>
       <p className="text-center text-lg text-white max-w-3xl mx-auto mb-12">
         Passionate software engineer with expertise in full-stack development
