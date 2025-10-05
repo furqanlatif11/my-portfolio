@@ -1,218 +1,257 @@
 "use client";
-import { BadgeCheck } from "lucide-react";
-import Image from "next/image";
+import { CheckCircle2, TrendingUp, Globe2, Code2, Zap } from "lucide-react";
 import React from "react";
 import Button from "./button";
+import { motion } from "framer-motion";
 
 const About: React.FC = () => {
   return (
-    <section className="py-20 px-6 customWidth mx-auto relative" id="about">
-      <h2 className="sectionHeading font-bold text-center mb-4">About</h2>
-      <p className="text-center text-lg text-white max-w-3xl mx-auto mb-12">
-        Passionate software engineer with expertise in full-stack development
-      </p>
-
-      <div className="grid md:grid-cols-2 gap-10 items-center">
-        {/* Left Column */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-4">
-            Building Digital Solutions That Matter
-          </h3>
-          <p className="text-white mb-4">
-            With over 3 years of experience in software and website development,
-            I specialize in creating robust, scalable applications using modern
-            technologies. My journey spans from freelance projects to
-            enterprise-level solutions.
+    <section className="py-20 px-6 bg-black relative overflow-hidden" id="about">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Building MVPs That Scale
+          </h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            I&apos;m a full-stack developer based in Lahore, Pakistan, specializing in 
+            production-ready web applications for startups and growing businesses worldwide.
           </p>
-          <p className="text-white mb-6">
-            I thrive on solving complex problems and turning ideas into reality
-            through clean, efficient code and user-centered design.
-          </p>
+        </motion.div>
 
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div>
-              <h4 className="font-semibold mb-2">Frontend</h4>
-              <ul className="space-y-1 text-white">
-                <li>✅ React & Next.js</li>
-                <li>✅ HTML & CSS</li>
-                <li>✅ TypeScript</li>
-                <li>✅ JavaScript</li>
-                <li>✅ Vue.js</li>
-                <li>✅ Bootstrap</li>
-                <li>✅ Tailwind CSS</li>
-              </ul>
+        {/* Story Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="prose prose-invert prose-lg max-w-none">
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Over the past <span className="text-green-500 font-semibold">3 years</span>, I&apos;ve 
+              delivered full-stack applications for companies in the <span className="text-green-500 font-semibold">UAE, 
+              US, and UK</span>—from early-stage MVPs to platforms serving thousands of users.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              My approach: <span className="text-white font-semibold">build it right from day one</span>. 
+              Fast enough to launch in 6-10 weeks, architected to handle 50K+ users without expensive rewrites. 
+              I&apos;ve seen too many startups hit growth and have to rebuild everything—my clients avoid that trap.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Currently, I lead frontend development at <span className="text-white font-semibold">ADYZER</span> 
+              (enterprise applications) while maintaining a selective freelance practice for startups who need 
+              senior-level execution without enterprise overhead.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* What I Bring - Three Pillars */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">What Sets Me Apart</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Pillar 1: Speed */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/10 border border-green-500/30 flex items-center justify-center">
+                <Zap className="w-8 h-8 text-green-500" />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-3">Fast Execution</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                MVPs delivered in 6-10 weeks. No endless revisions, no scope creep. 
+                Clear milestones, consistent progress.
+              </p>
             </div>
-            <div>
-              <h4 className="font-semibold mb-2">Backend</h4>
-              <ul className="space-y-1 text-white">
-                <li>✅ Node.js & Express</li>
-                <li>✅ RESTful APIs</li>
-                <li>✅ GraphQL</li>
-                <li>✅ MongoDB & Mongoose</li>
-                <li>✅ PostgreSQL</li>
-                <li>✅ Prisma</li>
-                <li>✅ MySQL</li>
-              </ul>
+
+            {/* Pillar 2: Scale */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center">
+                <TrendingUp className="w-8 h-8 text-blue-500" />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-3">Built to Scale</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Clean architecture from day one. My clients don&apos;t rewrite when they grow—
+                the foundation handles it.
+              </p>
+            </div>
+
+            {/* Pillar 3: SEO */}
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center">
+                <Globe2 className="w-8 h-8 text-purple-500" />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-3">SEO-Ready</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Technical SEO, Core Web Vitals, and performance optimization built in. 
+                Not an afterthought.
+              </p>
             </div>
           </div>
+        </motion.div>
 
-          <div className="flex gap-4">
-            <a
+        {/* Tech Stack - Focused */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="p-8 rounded-2xl bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5 border border-white/10">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Development Stack */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <Code2 className="w-5 h-5 text-green-500" />
+                  <h4 className="text-lg font-semibold text-white">Core Stack</h4>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    "React & Next.js",
+                    "TypeScript",
+                    "Node.js & Go",
+                    "PostgreSQL / MongoDB",
+                    "Tailwind CSS",
+                    "REST & GraphQL APIs"
+                  ].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2 text-gray-300">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      <span className="text-sm">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* SEO/Performance */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <TrendingUp className="w-5 h-5 text-blue-500" />
+                  <h4 className="text-lg font-semibold text-white">SEO & Performance</h4>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    "Google Search Console",
+                    "GTM & GA4",
+                    "Ahrefs",
+                    "Core Web Vitals",
+                    "Lighthouse Optimization",
+                    "Technical SEO Audits"
+                  ].map((tool) => (
+                    <div key={tool} className="flex items-center gap-2 text-gray-300">
+                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                      <span className="text-sm">{tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Stats - Integrated */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { value: "3+", label: "Years", sublabel: "Building MVPs" },
+              { value: "10+", label: "Projects", sublabel: "Delivered" },
+              { value: "8K+", label: "Users", sublabel: "In Production" },
+              { value: "5+", label: "Countries", sublabel: "Worldwide" }
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="text-center p-6 rounded-xl bg-white/5 border border-white/10"
+              >
+                <p className="text-3xl font-bold text-green-500 mb-1">{stat.value}</p>
+                <p className="text-white text-sm font-medium">{stat.label}</p>
+                <p className="text-gray-500 text-xs">{stat.sublabel}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Working With Me */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20">
+            <h3 className="text-xl font-bold text-white mb-4">Working Internationally</h3>
+            <div className="grid sm:grid-cols-2 gap-6 text-gray-300">
+              <div>
+                <p className="font-semibold text-white mb-2">Communication</p>
+                <p className="text-sm">
+                  IELTS 7 Band English proficiency. Clear written and verbal communication. 
+                  Daily updates via Slack/email.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white mb-2">Timezone Flexibility</p>
+                <p className="text-sm">
+                  Based in Pakistan (UTC+5) with flexible hours. Comfortable overlapping 
+                  with US/UK working hours.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white mb-2">Remote Experience</p>
+                <p className="text-sm">
+                  3 years working remotely with international teams. Async communication, 
+                  clear documentation, reliable delivery.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-white mb-2">Payment & Contracts</p>
+                <p className="text-sm">
+                  International payment via Wise/PayPal. Clear contracts, milestone-based 
+                  payment structure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="flex flex-wrap justify-center gap-4">
+            <a 
               href="/assets/images/M_Furqan_CV.pdf"
               download
-              className="bg-green-500 text-white hover:bg-green-700 px-6 py-3 rounded flex items-center"
+              className="px-8 py-4 bg-green-500 text-black font-semibold rounded-xl hover:bg-green-400 transition"
             >
-              Download CV
+              Download Resume
             </a>
             <Button
-              label="Let's Connect"
+              label="Connect on LinkedIn"
               href="https://www.linkedin.com/in/furqan-latif-profile/"
               variant="outlined"
               target="_blank"
               showHoverIcon={true}
             />
           </div>
-        </div>
-
-        {/* Right Column */}
-        <div className="space-y-6">
-          {/* Experience Card */}
-          <div className="relative group overflow-hidden rounded-xl p-6 bg-white/10 border border-white/20 backdrop-blur-md shadow-lg transition-all duration-500">
-            <h4 className="font-semibold text-lg mb-4 text-gray-100">
-              Professional Experience
-            </h4>
-            <div className="space-y-4 text-sm text-gray-200 relative z-10">
-              <div>
-                <p className="text-blue-300 font-medium">Software Engineer</p>
-                <Image
-                  src="/assets/images/adyzerLogo.png"
-                  alt=""
-                  width={20}
-                  height={20}
-                />
-                <p>ADYZER • Jan 2025 – Present</p>
-                <p>Leading frontend development for enterprise apps</p>
-                <p>Job Type: Remote</p>
-              </div>
-              <div>
-                <p className="text-blue-300 font-medium">
-                  Associate Software Engineer
-                </p>
-                <Image
-                  src="/assets/images/adyzerLogo.png"
-                  alt=""
-                  width={20}
-                  height={20}
-                />
-                <p>ADYZER • Oct 2024 – Jan 2025</p>
-                <p>Built web apps from concept to deployment</p>
-                <p>Job Type: Remote</p>
-              </div>
-              <div>
-                <p className="text-purple-300 font-medium">
-                  Software Engineer - I
-                </p>
-                <p className="">
-                  <Image
-                    src="/assets/images/mslmLogo.png"
-                    alt=""
-                    width={20}
-                    height={20}
-                  />
-                  MSLM DEV • Jun 2024 – Aug 2024
-                </p>
-                <p>Custom solutions for startups & small businesses</p>
-                <p>Job Type: On-site</p>
-              </div>
-              <div>
-                <p className="text-purple-300 font-medium">
-                  Software Engineer - Intern
-                </p>
-                <Image
-                  src="/assets/images/mslmLogo.png"
-                  alt=""
-                  width={20}
-                  height={20}
-                />
-                <p>MSLM DEV • Mar 2024 – May 2024</p>
-                <p>Custom solutions for startups & small businesses</p>
-                <p>Job Type: On-site</p>
-              </div>
-              <div>
-                <p className="text-green-300 font-medium">
-                  Frontend Developer - Intern
-                </p>
-                <Image
-                  src="/assets/images/pfLogo.png"
-                  alt=""
-                  width={20}
-                  height={20}
-                />
-                <p>Programmers Force • Dec 2023 – Feb 2024</p>
-                <p>Custom solutions for startups & small businesses</p>
-                <p>Job Type: On-site</p>
-              </div>
-            </div>
-            <div className="absolute right-[-50px] top-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500 opacity-30 rounded-full blur-3xl transition-transform duration-700 ease-in-out group-hover:translate-x-[-120px]" />
-          </div>
-
-          {/* Achievements Card */}
-          <div className="relative group overflow-hidden rounded-xl p-6 bg-white/10 border border-white/20 backdrop-blur-md shadow-lg transition-all duration-500">
-            <h4 className="font-semibold text-lg mb-4 text-gray-100">
-              Key Achievements
-            </h4>
-            <div className="grid grid-cols-2 gap-4 text-center text-sm font-medium relative z-10 text-gray-200">
-              <div>
-                <span className="text-2xl text-blue-400">10+</span>
-                <br />
-                Freelance Projects Delivered
-              </div>
-              <div>
-                <span className="text-2xl text-green-400">98%</span>
-                <br />
-                Client Satisfaction
-              </div>
-              <div>
-                <span className="text-2xl text-purple-400">15+</span>
-                <br />
-                Technologies
-              </div>
-              <div>
-                <span className="text-2xl text-orange-400">3+</span>
-                <br />
-                Years Experience
-              </div>
-            </div>
-            <div className="absolute left-[-50px] top-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 opacity-30 rounded-full blur-[80px] transition-transform duration-700 ease-in-out group-hover:translate-x-[200px]" />
-          </div>
-
-          {/* Certifications Card */}
-          <div className="relative group overflow-hidden rounded-xl p-6 bg-white/10 border border-white/20 backdrop-blur-md shadow-lg transition-all duration-500">
-            <h4 className="font-semibold text-lg mb-4 text-gray-100">
-              Certifications
-            </h4>
-            <ul className="space-y-1 text-sm text-gray-200 relative z-10">
-              <li className="flex gap-4">
-                <BadgeCheck className="text-blue-600" />
-                Programming with JavaScript
-              </li>
-              {/* <li className="flex gap-4">
-                <BadgeCheck className="text-blue-600" />
-                Google Cloud Professional
-              </li> */}
-              <li className="flex gap-4">
-                <BadgeCheck className="text-blue-600" />
-                React Developer Certification
-              </li>
-              <li className="flex gap-4">
-                <BadgeCheck className="text-blue-600" />
-                English Language Proficiency - IELTS 7 Bands
-              </li>
-            </ul>
-            <div className="absolute right-[-50px] top-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-green-400 via-teal-400 to-cyan-400 opacity-30 rounded-full blur-[80px] transition-transform duration-700 ease-in-out group-hover:translate-x-[-120px]" />
-          </div>
-        </div>
+        </motion.div>
       </div>
+
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10" />
     </section>
   );
 };

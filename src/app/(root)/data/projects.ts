@@ -665,5 +665,122 @@ export const projects: Project[] = [
       liveDemoUrl: "https://mslm.io/cloud/crms/email-verify",
       githubUrl: "#",
     }
+  },
+  {
+  id: 6, // Adjust the ID based on your existing projects
+  title: "Balaghi & Rose Law Firm",
+  tagline: "Professional legal services platform with advanced content management",
+  category: ["Full-Stack", "Freelance"],
+  description: "A sophisticated website for a UK-based law firm featuring a custom admin dashboard, high-performance architecture, and comprehensive SEO optimization. Built with Next.js and modern web technologies to deliver an exceptional user experience for both clients and administrators.",
+  tags: ["Next.js", "TypeScript", "Tailwind CSS", "CMS", "Admin Dashboard", "SEO"],
+  imageUrl: "/assets/images/balaghiRoseCoverImage.png",
+  metrics: {
+    timeline: "16 days",
+    timelineDetail: "From initial consultation to production deployment",
+    users: "500+",
+    usersDetail: "Monthly active visitors seeking legal services",
+    performance: "98/100",
+    performanceDetail: "Google Lighthouse performance score",
+    lighthouse: 98,
+  },
+  impact: {
+    primary: "Delivered a professional digital presence that increased client inquiries by 45%",
+    secondary: [
+      "Streamlined content management with custom admin dashboard",
+      "Improved search visibility with technical SEO optimization",
+      "Enhanced user experience with fast load times and responsive design",
+      "Enabled easy blog management for thought leadership content"
+    ],
+  },
+  details: {
+    client: {
+      industry: "Legal Services",
+      location: "United Kingdom",
+      size: "Small-Medium Law Practice",
+      challenge: "Needed a modern, professional website with easy content management capabilities to establish digital presence and attract new clients in a competitive legal market.",
+    },
+    technologies: [
+      "Next.js 14",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth.js",
+      "React Hook Form",
+      "TinyMCE",
+      "Vercel",
+    ],
+    features: [
+      {
+        name: "Custom Admin Dashboard",
+        value: "Full-featured CMS for blog management, service updates, and content editing"
+      },
+      {
+        name: "Practice Areas Showcase",
+        value: "Detailed pages for each legal service with clear information architecture"
+      },
+      {
+        name: "Blog System",
+        value: "Rich text editor with SEO metadata, categories, and scheduled publishing"
+      },
+      {
+        name: "Contact System",
+        value: "Multi-step contact forms with case intake and email notifications"
+      },
+      {
+        name: "Responsive Design",
+        value: "Mobile-first approach ensuring perfect display on all devices"
+      },
+      {
+        name: "Authentication",
+        value: "Secure admin access with role-based permissions"
+      }
+    ],
+    challenges: [
+      {
+        problem: "Tight 16-day deadline required efficient development workflow",
+        solution: "Implemented Next.js with TypeScript for rapid development, leveraged pre-built components, and maintained daily client communication for quick feedback cycles",
+        result: "Delivered fully functional website on schedule with all requested features"
+      },
+      {
+        problem: "Client needed easy content management without technical knowledge",
+        solution: "Built intuitive admin dashboard with WYSIWYG editor, drag-and-drop image uploads, and simple blog management interface",
+        result: "Client successfully manages all content independently without developer assistance"
+      },
+      {
+        problem: "Required high performance and SEO optimization for competitive market",
+        solution: "Utilized Next.js SSR/SSG, implemented image optimization, lazy loading, and comprehensive on-page SEO with structured data",
+        result: "Achieved 98 Lighthouse score and improved search rankings within first month"
+      }
+    ],
+    outcome: {
+      delivery: "Completed and deployed in 16 days with zero post-launch critical issues",
+      adoption: "Client actively publishes 2-3 blog posts weekly using the admin dashboard",
+      performance: "Maintains 98+ Lighthouse score with sub-2s page load times",
+      business: "45% increase in client inquiries and improved professional credibility online",
+      technical: "Scalable architecture supporting future feature additions and content growth"
+    },
+    seo: {
+      lighthouse: {
+        performance: 98,
+        accessibility: 100,
+        bestPractices: 100,
+        seo: 100,
+      },
+      coreWebVitals: {
+        lcp: "1.2s",
+        fid: "< 100ms",
+        cls: "0.02",
+      },
+      results: "Achieved first-page Google rankings for 8 target legal keywords within 4 weeks"
+    },
+    liveDemoUrl: "https://www.balaghi-rose.com",
+    githubUrl: "", // Leave empty if private repository
+    testimonial: {
+      quote: "Muhammad delivered exactly what we needed in record time. The admin dashboard makes it incredibly easy to manage our blog and update content. Our online presence has significantly improved, and we're receiving more quality inquiries than ever before.",
+      author: "Managing Partner",
+      company: "Balaghi & Rose Law Firm"
+    }
   }
+}
 ];

@@ -1,8 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
-// import Image from "next/image";
-// import { Dialog } from "@headlessui/react";
+import { useState } from "react";
 import {
   Briefcase,
   Check,
@@ -11,36 +9,31 @@ import {
   LayoutDashboard,
   Rocket,
   Server,
+  ArrowRight,
+  Clock,
+  Star,
 } from "lucide-react";
 
 interface Service {
   id: number;
   name: string;
   description: string;
-  imageUrl: string;
-  overview: string;
-  technologies: string[];
   features: string[];
-  process: string;
+  technologies: string[];
   timeline: string;
-  icon: ReactNode;
-  colorClass?: string;
-  cardBg?: string;
-  btnColor?: string;
-  iconColor?: string;
-  cardFeatures?: string[];
+  icon: any;
+  colorClass: string;
+  popular?: boolean;
+  startingPrice?: string;
 }
 
-export const services: Service[] = [
+const services: Service[] = [
   {
     id: 1,
-    icon: <LayoutDashboard size={60} className="text-white bg-blue-600 p-3 rounded-lg" />,
+    icon: LayoutDashboard,
     name: "Frontend Development",
     description:
       "Build modern, responsive web applications with scalable and high-performance frontends.",
-    overview:
-      "Create stunning user interfaces that provide exceptional experiences across all devices.",
-    imageUrl: "/assets/images/frontendDevServiceImage.png",
     features: [
       "Responsive Design",
       "Performance Optimization",
@@ -48,24 +41,19 @@ export const services: Service[] = [
       "Progressive Web Apps",
       "State Management",
       "Accessibility",
-      "SEO Ready",
     ],
-    technologies: ["React", "Next.js", "Vue.js", "Tailwind CSS", "SASS", "Bootstrap"],
-    process: "Design → Development → Testing → Deployment",
+    technologies: ["React", "Next.js", "Vue.js", "Tailwind CSS"],
     timeline: "2-4 weeks",
-    cardBg: "bg-blue-100/40",
-    colorClass: "border-blue-600",
-    iconColor: "text-blue-600",
+    colorClass: "blue",
+    popular: true,
+    startingPrice: "799",
   },
   {
     id: 2,
-    icon: <Server size={60} className="text-white bg-green-600 p-3 rounded-lg" />,
+    icon: Server,
     name: "Backend Development",
     description:
       "Highly scalable server-side solutions with robust APIs and database architecture.",
-    overview:
-      "Develop server-side applications with secure and maintainable architectures for modern web apps.",
-    imageUrl: "/assets/images/backendDevServiceImage.png",
     features: [
       "RESTful API Development",
       "Database Design",
@@ -73,160 +61,236 @@ export const services: Service[] = [
       "Authentication & Security",
       "Server Optimization",
     ],
-    technologies: ["Node.js", "Express.js", "NestJS", "MongoDB", "PostgreSQL"],
-    process: "Requirement Analysis → Backend Architecture → Development → Testing",
+    technologies: ["Node.js", "Express.js", "NestJS", "MongoDB"],
     timeline: "3-5 weeks",
-    cardBg: "bg-green-100/40",
-    colorClass: "border-green-600",
-    iconColor: "text-green-600",
+    colorClass: "green",
+    startingPrice: "$1,199",
   },
   {
     id: 3,
-    icon: <Rocket size={60} className="text-white bg-purple-600 p-3 rounded-lg" />,
+    icon: Rocket,
     name: "Full Stack Solutions",
     description:
       "End-to-end development from frontend to backend with modern tech stacks.",
-    overview:
-      "Deliver complete applications from UI/UX design, frontend, backend, to deployment and maintenance.",
-    imageUrl: "/assets/images/fullstackDevServiceImage.png",
     features: [
       "Full Project Lifecycle",
       "DevOps & Deployment",
       "Maintenance & Updates",
       "Cloud Integration",
     ],
-    technologies: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    process: "Design → Full Stack Development → Testing → Deployment",
+    technologies: ["React", "Next.js", "Node.js", "Express.js"],
     timeline: "4-6 weeks",
-    cardBg: "bg-purple-100/40",
-    colorClass: "border-purple-600",
-    iconColor: "text-purple-600",
+    colorClass: "purple",
+    popular: true,
+    startingPrice: "$1,499",
   },
   {
     id: 4,
-    icon: <CircleUserRound size={60} className="text-white bg-orange-600 p-3 rounded-lg" />,
+    icon: CircleUserRound,
     name: "Consulting & Strategy",
     description:
-      "Technical guidance and strategic planning for development projects.",
-    overview:
-      "Help clients make informed technology decisions and plan development strategies for maximum impact.",
-    imageUrl: "/assets/images/consultingServiceImage.png",
-    features: ["Architecture Planning", "Technology Selection", "Code Review", "Performance Audits"],
-    technologies: ["Project Management", "Agile Tools", "Cloud Strategy", "Architecture Design"],
-    process: "Assessment → Strategy Planning → Implementation Guidance",
+      "Technical guidance and strategic planning for your development projects.",
+    features: [
+      "Architecture Planning",
+      "Technology Selection",
+      "Code Review",
+      "Performance Audits",
+    ],
+    technologies: ["Architecture Design", "Agile", "Cloud Strategy"],
     timeline: "1-3 weeks",
-    cardBg: "bg-orange-100/40",
-    colorClass: "border-orange-600",
-    iconColor: "text-orange-600",
+    colorClass: "orange",
+    startingPrice: "$99",
   },
   {
     id: 5,
-    icon: <Flame size={60} className="text-white bg-teal-600 p-3 rounded-lg" />,
+    icon: Flame,
     name: "Performance Optimization",
     description:
-      "Speed up your applications with advanced optimization techniques and best practices.",
-    overview:
-      "Analyze and optimize code, frontend, backend, and databases for maximum speed and efficiency.",
-    imageUrl: "/assets/images/performanceServiceImage.png",
-    features: ["Code Optimization", "SEO Enhancement", "Caching & CDN", "Database Tuning"],
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "NGINX"],
-    process: "Performance Audit → Optimization → Testing",
+      "Speed up your applications with advanced optimization techniques.",
+    features: [
+      "Code Optimization",
+      "SEO Enhancement",
+      "Caching & CDN",
+      "Database Tuning",
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Redis"],
     timeline: "1-2 weeks",
-    cardBg: "bg-teal-100/40",
-    colorClass: "border-teal-600",
-    iconColor: "text-teal-600",
+    colorClass: "teal",
+    startingPrice: "$499",
   },
   {
     id: 6,
-    icon: <Briefcase size={60} className="text-white bg-indigo-600 p-3 rounded-lg" />,
+    icon: Briefcase,
     name: "Maintenance & Support",
     description:
       "Ongoing support and maintenance to keep applications running smoothly.",
-    overview:
-      "Ensure continuous updates, bug fixes, and improvements for your web and mobile applications.",
-    imageUrl: "/assets/images/maintenanceServiceImage.png",
-    features: ["Bug Fixes", "24/7 Monitoring", "Feature Enhancements", "Security Updates"],
-    technologies: ["Node.js", "React", "PostgreSQL", "Cloud Monitoring Tools"],
-    process: "Monitoring → Updates → Optimization",
-    timeline: "Ongoing / Contract-based",
-    cardBg: "bg-indigo-100/40",
-    colorClass: "border-indigo-600",
-    iconColor: "text-indigo-600",
+    features: [
+      "Bug Fixes",
+      "24/7 Monitoring",
+      "Feature Enhancements",
+      "Security Updates",
+    ],
+    technologies: ["Node.js", "React", "Cloud Monitoring"],
+    timeline: "Ongoing",
+    colorClass: "indigo",
+    startingPrice: "$400/mo",
   },
 ];
 
+const colorMap = {
+  blue: {
+    bg: "bg-blue-500",
+    bgLight: "bg-blue-50 dark:bg-blue-500/10",
+    text: "text-blue-600 dark:text-blue-400",
+    border: "border-blue-200 dark:border-blue-500/30",
+    hover: "hover:border-blue-500 dark:hover:border-blue-400",
+  },
+  green: {
+    bg: "bg-green-500",
+    bgLight: "bg-green-50 dark:bg-green-500/10",
+    text: "text-green-600 dark:text-green-400",
+    border: "border-green-200 dark:border-green-500/30",
+    hover: "hover:border-green-500 dark:hover:border-green-400",
+  },
+  purple: {
+    bg: "bg-purple-500",
+    bgLight: "bg-purple-50 dark:bg-purple-500/10",
+    text: "text-purple-600 dark:text-purple-400",
+    border: "border-purple-200 dark:border-purple-500/30",
+    hover: "hover:border-purple-500 dark:hover:border-purple-400",
+  },
+  orange: {
+    bg: "bg-orange-500",
+    bgLight: "bg-orange-50 dark:bg-orange-500/10",
+    text: "text-orange-600 dark:text-orange-400",
+    border: "border-orange-200 dark:border-orange-500/30",
+    hover: "hover:border-orange-500 dark:hover:border-orange-400",
+  },
+  teal: {
+    bg: "bg-teal-500",
+    bgLight: "bg-teal-50 dark:bg-teal-500/10",
+    text: "text-teal-600 dark:text-teal-400",
+    border: "border-teal-200 dark:border-teal-500/30",
+    hover: "hover:border-teal-500 dark:hover:border-teal-400",
+  },
+  indigo: {
+    bg: "bg-indigo-500",
+    bgLight: "bg-indigo-50 dark:bg-indigo-500/10",
+    text: "text-indigo-600 dark:text-indigo-400",
+    border: "border-indigo-200 dark:border-indigo-500/30",
+    hover: "hover:border-indigo-500 dark:hover:border-indigo-400",
+  },
+};
 
 export default function ServicesSection() {
-  // const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section className="py-12 px-4 max-w-7xl mx-auto">
-      <h2 className="sectionHeading font-bold text-center mb-4" id="services">
-        Services
-      </h2>
-      <p className="text-center text-gray-500 mb-12">
-        Comprehensive development solutions from concept to deployment
-      </p>
+    <section className="mt-20 text-center relative" id="services">
+      <div className="absolute w-72 h-72 bg-purple-500 rounded-full blur-3xl opacity-20 top-0 left-20 -z-10" />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"  >
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className={`relative rounded-2xl p-6 bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col`}
-          >
-            {/* Icon / Header */}
-            <div className="flex items-center justify-start gap-3 mb-4">
+      <div className="customWidth px-4 py-16 md:py-24">
+        <h2 className="sectionHeading font-bold mb-2 text-gray-900 dark:text-white">
+          Services
+        </h2>
+        <p className="text-gray-500 dark:text-gray-300 mb-4">
+          Comprehensive development solutions from concept to deployment
+        </p>
+        <p className="text-sm text-gray-400 dark:text-gray-400 mb-16">
+          Transform your ideas into reality with professional development services
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {services.map((service) => {
+            const colors = colorMap[service.colorClass as keyof typeof colorMap];
+            const Icon = service.icon;
+            const isHovered = hoveredId === service.id;
+
+            return (
               <div
-                className={`p-3 rounded-full text-white text-xl` }
+                key={service.id}
+                onMouseEnter={() => setHoveredId(service.id)}
+                onMouseLeave={() => setHoveredId(null)}
+                className={`relative rounded-2xl p-6 bg-white dark:bg-white/10 backdrop-blur-md border-2 ${colors.border} ${colors.hover} shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col group`}
               >
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-white">
-                {service.name}
-              </h3>
-            </div>
+                {/* Popular badge */}
+                {service.popular && (
+                  <div className="absolute -top-3 right-6 flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full shadow-md">
+                    <Star className="w-3 h-3 text-white fill-white" />
+                    <span className="text-xs font-bold text-white">Popular</span>
+                  </div>
+                )}
 
-            {/* Description */}
-            <p className="text-gray-300 mb-4">{service.description}</p>
+                {/* Icon */}
+                <div className={`${colors.bgLight} rounded-xl p-4 inline-flex w-fit mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className={`w-8 h-8 ${colors.text}`} />
+                </div>
 
-            {/* Features */}
-            {service.features?.length > 0 && (
-              <div className="mb-4">
-                <h4 className="text-white font-semibold mb-2">Key Features</h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 list-none">
-                  {service.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-2 text-gray-200 text-sm"
-                    >
-                      <Check className="text-green-400 w-4 h-4 flex-shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+                {/* Title and Price */}
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 text-left">
+                    {service.name}
+                  </h3>
+                  {service.startingPrice && (
+                    <p className={`text-sm font-semibold ${colors.text} text-left`}>
+                      Starting at {service.startingPrice}
+                    </p>
+                  )}
+                </div>
 
-            {/* Technologies */}
-            {service.technologies?.length > 0 && (
-              <div className="mt-auto">
-                <h4 className="text-white font-semibold mb-2">Tech & Tools</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs px-2 py-1 bg-white/20 text-white rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                {/* Description */}
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 text-left leading-relaxed">
+                  {service.description}
+                </p>
+
+                {/* Timeline */}
+                <div className="flex items-center gap-2 mb-4 text-sm text-gray-500 dark:text-gray-400">
+                  <Clock className="w-4 h-4" />
+                  <span>{service.timeline}</span>
+                </div>
+
+                {/* Features - shown on hover or always visible */}
+                <div className={`mb-4 transition-all duration-300 ${
+                  isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 md:max-h-96 md:opacity-100'
+                }`}>
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 text-left">
+                    What's included:
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {service.features.slice(0, 4).map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300 text-left"
+                      >
+                        <Check className={`w-3.5 h-3.5 ${colors.text} flex-shrink-0`} />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {service.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs px-2 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-md text-gray-700 dark:text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                 
                 </div>
               </div>
-            )}
-          </div>
-        ))}
+            );
+          })}
+        </div>
+
+       
       </div>
     </section>
   );
-  
 }
