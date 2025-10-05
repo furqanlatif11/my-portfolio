@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import * as React from "react";
+import ReactCountryFlag from "react-country-flag";
 
 type Testimonial = {
   review: string;
@@ -18,7 +19,7 @@ const testimonials: Testimonial[] = [
       "Working with Furqan has been an exceptional experience. From the very beginning, he understood our vision for Skill Nexus and transformed it into a fully functional, scalable platform. His attention to detail, clean code practices, and ability to think like both a developer and a product strategist made a huge difference. The admin dashboard, course management system, and overall user experience turned out far better than we initially imagined. He’s not just a developer — he’s a problem-solver who genuinely cares about delivering results.",
     name: "Mohsin Masood",
     role: "CEO, Skill Nexus",
-    flag: "uae",
+    flag: "AE",
     rating: 5,
   },
   {
@@ -26,15 +27,15 @@ const testimonials: Testimonial[] = [
       "Furqan did an outstanding job revamping our website. He quickly understood our business and delivered a professional, impactful platform that truly represents AH Engineering Services. His blend of technical skill and creative insight made the whole process seamless.",
     name: "Ahmed Faizan",
     role: "CEO, A. H. Engineering Services",
-    flag: "pk",
+    flag: "PK", // Pakistan
     rating: 5,
   },
   {
     review:
       "Furqan delivered exactly what we envisioned — on time and with exceptional precision. He followed our design guidelines perfectly and turned them into a seamless, high-quality product. His commitment to deadlines and attention to detail make him a trusted development partner for Power Tech Solutions.",
-    name: "Nadeem Shakoor",
+    name: "Mike D. Andrew",
     role: "CEO, PowerTech Solutions",
-    flag: "us",
+    flag: "US",
     rating: 5,
   },
   {
@@ -42,10 +43,17 @@ const testimonials: Testimonial[] = [
       "Furqan saved us at a critical time. Our contract with a major bank merchant was on the verge of cancellation due to project delays, but he stepped in and delivered the complete solution within just two days. His efficiency, technical skill, and dedication under pressure were exceptional — he truly helped us maintain our client’s trust.",
     name: "Obaid Afzal",
     role: "CEO, Kinetic Networks",
-    flag: "🇺🇸",
+    flag: "US",
     rating: 5,
   },
- 
+  {
+    review:
+      "Five star for the brother Muhammad Furqan. He Helped me in my project and delivered it before time. He is very professional and knows his work very well. I will definitely hire him again for my future projects.",
+    name: "Marshal M.",
+    role: "University Student",
+    flag: "AU",
+    rating: 5,
+  },
 ];
 
 export default function TestimonialSection() {
@@ -120,7 +128,17 @@ export default function TestimonialSection() {
 
             {/* Author */}
             <div className="flex items-center justify-center gap-4">
-              <div className="text-4xl">{current.flag}</div>
+              <ReactCountryFlag
+                countryCode={current.flag}
+                svg
+                style={{
+                  width: "2.5em",
+                  height: "2.5em",
+                  objectFit: "cover",
+                  borderRadius: "24px",
+                }}
+                title={current.flag}
+              />
               <div className="text-left">
                 <p className="font-bold text-gray-900 dark:text-white text-lg">
                   {current.name}
@@ -169,6 +187,7 @@ export default function TestimonialSection() {
           </div>
 
           {/* Grid of All Testimonials Below */}
+          {/* Grid of All Testimonials Below */}
           <div className="grid md:grid-cols-3 gap-6 mt-16">
             {testimonials.map((testimonial, index) => (
               <button
@@ -181,7 +200,16 @@ export default function TestimonialSection() {
                 }`}
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="text-2xl">{testimonial.flag}</div>
+                  <ReactCountryFlag
+                    countryCode={testimonial.flag} // Changed from current.flag to testimonial.flag
+                    svg
+                    style={{
+                      width: "1.5em", // Smaller size for grid
+                      height: "1.5em",
+                      borderRadius: "2px",
+                    }}
+                    title={testimonial.flag}
+                  />
                   <div>
                     <p className="font-semibold text-sm text-gray-900 dark:text-white">
                       {testimonial.name}
