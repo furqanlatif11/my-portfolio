@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { FaLaptopCode, FaServer, FaCode, FaRocket, FaMapMarkerAlt } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-
+import { IconType } from "react-icons";
 interface ExperienceItem {
   role: string;
   company: string;
@@ -11,7 +11,7 @@ interface ExperienceItem {
   description: string;
   achievements?: string[];
   tech: string[];
-  icon: any;
+  icon: IconType;
   accentColor: string;
 }
 
