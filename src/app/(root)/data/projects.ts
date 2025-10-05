@@ -673,7 +673,7 @@ export const projects: Project[] = [
   category: ["Full-Stack", "Freelance"],
   description: "A sophisticated website for a UK-based law firm featuring a custom admin dashboard, high-performance architecture, and comprehensive SEO optimization. Built with Next.js and modern web technologies to deliver an exceptional user experience for both clients and administrators.",
   tags: ["Next.js", "TypeScript", "Tailwind CSS", "CMS", "Admin Dashboard", "SEO"],
-  imageUrl: "/assets/images/balaghiRoseCoverImage.png",
+  imageUrl: "/assets/images/balaghiRoseCoverImage.PNG",
   metrics: {
     timeline: "16 days",
     timelineDetail: "From initial consultation to production deployment",
