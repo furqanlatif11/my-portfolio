@@ -663,7 +663,7 @@ export const projects: Project[] = [
       },
 
       liveDemoUrl: "https://mslm.io/cloud/crms/email-verify",
-      githubUrl: "#",
+      githubUrl: "",
     }
   },
   {
@@ -775,7 +775,7 @@ export const projects: Project[] = [
       results: "Achieved first-page Google rankings for 8 target legal keywords within 4 weeks"
     },
     liveDemoUrl: "https://www.balaghi-rose.com",
-    githubUrl: "", // Leave empty if private repository
+    githubUrl: "https://github.com/BalaghiRose/Balaghi-Rose", // Leave empty if private repository
     testimonial: {
       quote: "Muhammad delivered exactly what we needed in record time. The admin dashboard makes it incredibly easy to manage our blog and update content. Our online presence has significantly improved, and we're receiving more quality inquiries than ever before.",
       author: "Managing Partner",
