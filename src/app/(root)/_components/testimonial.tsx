@@ -100,7 +100,7 @@ export default function TestimonialSection() {
           <div className="relative bg-gradient-to-br from-purple-500/10 to-blue-500/10 dark:from-purple-500/5 dark:to-blue-500/5 rounded-3xl p-8 md:p-12 border border-purple-200 dark:border-purple-500/20 2 border border-purple-200 dark:border-purple-500/20">
             {/* Large Quote Mark */}
             <div className="text-6xl md:text-8xl text-purple-500/20 font-serif mb-4">
-              "
+              &quot;
             </div>
 
             {/* Review Text */}

@@ -9,11 +9,10 @@ import {
   LayoutDashboard,
   Rocket,
   Server,
-  ArrowRight,
   Clock,
   Star,
 } from "lucide-react";
-
+import { LucideIcon } from "lucide-react";
 interface Service {
   id: number;
   name: string;
@@ -21,7 +20,7 @@ interface Service {
   features: string[];
   technologies: string[];
   timeline: string;
-  icon: any;
+  icon: LucideIcon;
   colorClass: string;
   popular?: boolean;
   startingPrice?: string;
@@ -254,7 +253,7 @@ export default function ServicesSection() {
                   isHovered ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 md:max-h-96 md:opacity-100'
                 }`}>
                   <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 text-left">
-                    What's included:
+                    What&apos;s included:
                   </h4>
                   <ul className="space-y-1.5">
                     {service.features.slice(0, 4).map((feature) => (
